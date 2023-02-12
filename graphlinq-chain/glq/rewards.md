@@ -14,4 +14,4 @@ Since we follow a PoA consensus, this program is only limited for a few validato
 
 ### **Engine Rewards**
 
-By [running a graphlinq engine](../../dev-tooling/engine/running-an-engine-locally.md) locally on your pc, you are executing graphs on-chain which will trigger nodes and notify that you're actively contributing to the network, which in turn will reward you with GLQ.&#x20;
+By [running a graphlinq engine](../../dev-tooling/engine/running-an-engine-locally.md) locally on your pc, you are executing graphs on-chain which will trigger nodes and notify that you're actively contributing to the network, which in turn will reward you with GLQ. (coming soon)
