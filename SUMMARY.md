@@ -16,7 +16,7 @@
     * [Status](graphlinq-chain/networks/graphlinq-chain-mainnet/status.md)
 * [GLQ](graphlinq-chain/glq/README.md)
   * [Allocation](graphlinq-chain/glq/allocation.md)
-  * [Bridge](graphlinq-chain/glq/bridge.md)
+  * [Bridge (Live Soon)](graphlinq-chain/glq/bridge-live-soon.md)
   * [Rewards](graphlinq-chain/glq/rewards.md)
 
 ## Dev tooling
