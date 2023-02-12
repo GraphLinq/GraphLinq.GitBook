@@ -2,7 +2,7 @@
 
 ### **Staking**&#x20;
 
-Staking will provide GLQ holders with a way to earn rewards for participating in the growth of GraphLinq. With the launch of the GraphLinq Chain, staking rewards will be even higher, providing a higher annual percentage yield (APY) for GLQ holders who choose to participate in the program.
+Staking will provide GLQ holders with a way to earn rewards for participating in the growth of GraphLinq. With the launch of the GraphLinq Chain, staking rewards will be even higher, providing a higher annual percentage yield (APY) for GLQ holders who choose to participate in the program. The staking on https://app.graphlinq.io/staking/ will be auto-migrated to GraphLinq Chain mainnet. If you have GLQ staked on the app, simply switch the network and you will find a "Claim" button on our network where you will be able to claim your staked GLQ on the new chain.
 
 ### **Validators**&#x20;
 
