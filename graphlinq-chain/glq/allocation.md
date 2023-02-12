@@ -6,6 +6,6 @@
 
 **Ecosystem Fund**: 50,000,000
 
-**Rewards for Stakers & Validators**: 50,000,000
+**Rewards for Stakers & Graph Incentivisation**: 50,000,000
 
 **Treasury**: 50,000,000
