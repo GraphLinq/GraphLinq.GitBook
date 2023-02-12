@@ -13,6 +13,7 @@
       * [Add GraphLinq Chain to Metamask](graphlinq-chain/networks/graphlinq-chain-mainnet/wallet/add-graphlinq-chain-to-metamask.md)
     * [RPC Public Nodes](graphlinq-chain/networks/graphlinq-chain-mainnet/rpc-public-nodes.md)
     * [Explorer](graphlinq-chain/networks/graphlinq-chain-mainnet/explorer.md)
+    * [Status](graphlinq-chain/networks/graphlinq-chain-mainnet/status.md)
 * [GLQ](graphlinq-chain/glq/README.md)
   * [Allocation](graphlinq-chain/glq/allocation.md)
   * [Bridge](graphlinq-chain/glq/bridge.md)
