@@ -1,6 +1,6 @@
 # Bridge (Live Soon)
 
-Head over to [app.graphlinq.io/bridge](https://app.graphlinq.io/bridge) once its live to bridge your GLQ from Ethereum Network to GraphLinq Chain.&#x20;
+Head over to [app.graphlinq.io/app/bridge](https://app.graphlinq.io/app/bridge) once its live to bridge your GLQ from Ethereum Network to GraphLinq Chain.&#x20;
 
 **Steps**:
 
