@@ -84,7 +84,8 @@ Examples of using the JSON\_RPC API by making [curl](https://curl.se/) requests 
 The curl requests might return an error message relating to the content type. This is because the `--data` option sets the content type to `application/x-www-form-urlencoded`. If your node does complain about this, manually set the header by placing `-H "Content-Type: application/json"` at the start of the call. The examples also do not include the URL/IP & port combination which must be the last argument given to curl (e.g. `127.0.0.1:8545`). A complete curl request including these additional data takes the following form:
 
 ```
-1curl -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":67}' 127.0.0.1:85452
+curl -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":67}' 127.0.0.1:8545
+
 ```
 
 ### GOSSIP, STATE, HISTORY <a href="#gossip-state-history" id="gossip-state-history"></a>
@@ -143,7 +144,15 @@ None
 **Example**
 
 ```
-2curl -X POST --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":67}'3// Result4{5  "id":67,6  "jsonrpc":"2.0",7  "result": "Mist/v0.9.3/darwin/go1.4.1"8}9
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":67}'
+// Result
+{
+  "id":67,
+  "jsonrpc":"2.0",
+  "result": "Mist/v0.9.3/darwin/go1.4.1"
+}
+
 
 ```
 
@@ -919,8 +928,15 @@ Use [eth\_getTransactionReceipt](https://ethereum.org/en/developers/docs/apis/js
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_sendRawTransaction","params":[{see above}],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": "0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331"8}9
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_sendRawTransaction","params":[{see above}],"id":1}'
+// Result
+{
+  "id":1,
+  "jsonrpc": "2.0",
+  "result": "0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331"
+}
+
 ```
 
 #### eth\_call <a href="#eth_call" id="eth_call"></a>
@@ -947,8 +963,15 @@ Executes a new message call immediately without creating a transaction on the bl
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_call","params":[{see above}],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": "0x"8}9
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_call","params":[{see above}],"id":1}'
+// Result
+{
+  "id":1,
+  "jsonrpc": "2.0",
+  "result": "0x"
+}
+
 ```
 
 #### eth\_estimateGas <a href="#eth_estimategas" id="eth_estimategas"></a>
@@ -966,8 +989,15 @@ See [eth\_call](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth\_call
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_estimateGas","params":[{see above}],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": "0x5208" // 210008}9
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_estimateGas","params":[{see above}],"id":1}'
+// Result
+{
+  "id":1,
+  "jsonrpc": "2.0",
+  "result": "0x5208" // 21000
+}
+
 ```
 
 #### eth\_getBlockByHash <a href="#eth_getblockbyhash" id="eth_getblockbyhash"></a>
@@ -980,8 +1010,11 @@ Returns information about a block by hash.
 2. `Boolean` - If `true` it returns the full transaction objects, if `false` only the hashes of the transactions.
 
 ```
-1params: [2  "0xdc0818cf78f21a8e70579cb46a43643f78291264dda342ae31049421c82d21ae",3  false,4]5
- Copy
+params: [
+  "0xdc0818cf78f21a8e70579cb46a43643f78291264dda342ae31049421c82d21ae",
+  false,
+]
+
 ```
 
 **Returns**
@@ -1011,8 +1044,39 @@ Returns information about a block by hash.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBlockByHash","params":["0xdc0818cf78f21a8e70579cb46a43643f78291264dda342ae31049421c82d21ae", false],"id":1}'3// Result4{5{6"jsonrpc": "2.0",7"id": 1,8"result": {9    "difficulty": "0x4ea3f27bc",10    "extraData": "0x476574682f4c5649562f76312e302e302f6c696e75782f676f312e342e32",11    "gasLimit": "0x1388",12    "gasUsed": "0x0",13    "hash": "0xdc0818cf78f21a8e70579cb46a43643f78291264dda342ae31049421c82d21ae",14    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",15    "miner": "0xbb7b8287f3f0a933474a79eae42cbca977791171",16    "mixHash": "0x4fffe9ae21f1c9e15207b1f472d5bbdd68c9595d461666602f2be20daf5e7843",17    "nonce": "0x689056015818adbe",18    "number": "0x1b4",19    "parentHash": "0xe99e022112df268087ea7eafaf4790497fd21dbeeb6bd7a1721df161a6657a54",20    "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",21    "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",22    "size": "0x220",23    "stateRoot": "0xddc8b0234c2e0cad087c8b389aa7ef01f7d79b2570bccb77ce48648aa61c904d",24    "timestamp": "0x55ba467c",25    "totalDifficulty": "0x78ed983323d",26    "transactions": [27    ],28    "transactionsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",29    "uncles": [30    ]31}32}33
-Show all Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBlockByHash","params":["0xdc0818cf78f21a8e70579cb46a43643f78291264dda342ae31049421c82d21ae", false],"id":1}'
+// Result
+{
+{
+"jsonrpc": "2.0",
+"id": 1,
+"result": {
+    "difficulty": "0x4ea3f27bc",
+    "extraData": "0x476574682f4c5649562f76312e302e302f6c696e75782f676f312e342e32",
+    "gasLimit": "0x1388",
+    "gasUsed": "0x0",
+    "hash": "0xdc0818cf78f21a8e70579cb46a43643f78291264dda342ae31049421c82d21ae",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "miner": "0xbb7b8287f3f0a933474a79eae42cbca977791171",
+    "mixHash": "0x4fffe9ae21f1c9e15207b1f472d5bbdd68c9595d461666602f2be20daf5e7843",
+    "nonce": "0x689056015818adbe",
+    "number": "0x1b4",
+    "parentHash": "0xe99e022112df268087ea7eafaf4790497fd21dbeeb6bd7a1721df161a6657a54",
+    "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+    "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+    "size": "0x220",
+    "stateRoot": "0xddc8b0234c2e0cad087c8b389aa7ef01f7d79b2570bccb77ce48648aa61c904d",
+    "timestamp": "0x55ba467c",
+    "totalDifficulty": "0x78ed983323d",
+    "transactions": [
+    ],
+    "transactionsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+    "uncles": [
+    ]
+}
+}
+
 ```
 
 #### eth\_getBlockByNumber <a href="#eth_getblockbynumber" id="eth_getblockbynumber"></a>
@@ -1025,8 +1089,11 @@ Returns information about a block by block number.
 2. `Boolean` - If `true` it returns the full transaction objects, if `false` only the hashes of the transactions.
 
 ```
-1params: [2  "0x1b4", // 4363  true,4]5
- Copy
+params: [
+  "0x1b4", // 436
+  true,
+]
+
 ```
 
 **Returns** See [eth\_getBlockByHash](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth\_getblockbyhash)
@@ -1034,8 +1101,9 @@ Returns information about a block by block number.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["0x1b4", true],"id":1}'3
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["0x1b4", true],"id":1}'
+
 ```
 
 Result see [eth\_getBlockByHash](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth\_getblockbyhash)
@@ -1049,8 +1117,8 @@ Returns the information about a transaction requested by transaction hash.
 1. `DATA`, 32 Bytes - hash of a transaction
 
 ```
-1params: ["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"]2
- Copy
+params: ["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"]
+
 ```
 
 **Returns**
@@ -1075,8 +1143,30 @@ Returns the information about a transaction requested by transaction hash.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionByHash","params":["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"],"id":1}'3// Result4{5  "jsonrpc":"2.0",6  "id":1,7  "result":{8    "blockHash":"0x1d59ff54b1eb26b013ce3cb5fc9dab3705b415a67127a003c3e61eb445bb8df2",9    "blockNumber":"0x5daf3b", // 613970710    "from":"0xa7d9ddbe1f17865597fbd27ec712455208b6b76d",11    "gas":"0xc350", // 5000012    "gasPrice":"0x4a817c800", // 2000000000013    "hash":"0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b",14    "input":"0x68656c6c6f21",15    "nonce":"0x15", // 2116    "to":"0xf02c1c8e6114b1dbe8937a39260b5b0a374432bb",17    "transactionIndex":"0x41", // 6518    "value":"0xf3dbb76162000", // 429000000000000019    "v":"0x25", // 3720    "r":"0x1b5e176d927f8e9ab405058b2d2457392da3e20f328b16ddabcebc33eaac5fea",21    "s":"0x4ba69724e8f69de52f0125ad8b3c5c2cef33019bac3249e2c0a2192766d1721c"22  }23}24
-Show all Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionByHash","params":["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"],"id":1}'
+// Result
+{
+  "jsonrpc":"2.0",
+  "id":1,
+  "result":{
+    "blockHash":"0x1d59ff54b1eb26b013ce3cb5fc9dab3705b415a67127a003c3e61eb445bb8df2",
+    "blockNumber":"0x5daf3b", // 6139707
+    "from":"0xa7d9ddbe1f17865597fbd27ec712455208b6b76d",
+    "gas":"0xc350", // 50000
+    "gasPrice":"0x4a817c800", // 20000000000
+    "hash":"0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b",
+    "input":"0x68656c6c6f21",
+    "nonce":"0x15", // 21
+    "to":"0xf02c1c8e6114b1dbe8937a39260b5b0a374432bb",
+    "transactionIndex":"0x41", // 65
+    "value":"0xf3dbb76162000", // 4290000000000000
+    "v":"0x25", // 37
+    "r":"0x1b5e176d927f8e9ab405058b2d2457392da3e20f328b16ddabcebc33eaac5fea",
+    "s":"0x4ba69724e8f69de52f0125ad8b3c5c2cef33019bac3249e2c0a2192766d1721c"
+  }
+}
+
 ```
 
 #### eth\_getTransactionByBlockHashAndIndex <a href="#eth_gettransactionbyblockhashandindex" id="eth_gettransactionbyblockhashandindex"></a>
@@ -1089,8 +1179,11 @@ Returns information about a transaction by block hash and transaction index posi
 2. `QUANTITY` - integer of the transaction index position.
 
 ```
-1params: [2  "0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331",3  "0x0", // 04]5
- Copy
+params: [
+  "0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331",
+  "0x0", // 0
+]
+
 ```
 
 **Returns** See [eth\_getTransactionByHash](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth\_gettransactionbyhash)
@@ -1098,8 +1191,9 @@ Returns information about a transaction by block hash and transaction index posi
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionByBlockHashAndIndex","params":["0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b", "0x0"],"id":1}'3
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionByBlockHashAndIndex","params":["0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b", "0x0"],"id":1}'
+
 ```
 
 Result see [eth\_getTransactionByHash](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth\_gettransactionbyhash)
@@ -1114,8 +1208,11 @@ Returns information about a transaction by block number and transaction index po
 2. `QUANTITY` - the transaction index position.
 
 ```
-1params: [2  "0x29c", // 6683  "0x0", // 04]5
- Copy
+params: [
+  "0x29c", // 668
+  "0x0", // 0
+]
+
 ```
 
 **Returns** See [eth\_getTransactionByHash](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth\_gettransactionbyhash)
@@ -1123,8 +1220,9 @@ Returns information about a transaction by block number and transaction index po
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionByBlockNumberAndIndex","params":["0x29c", "0x0"],"id":1}'3
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionByBlockNumberAndIndex","params":["0x29c", "0x0"],"id":1}'
+
 ```
 
 Result see [eth\_getTransactionByHash](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth\_gettransactionbyhash)
@@ -1140,8 +1238,8 @@ Returns the receipt of a transaction by transaction hash.
 1. `DATA`, 32 Bytes - hash of a transaction
 
 ```
-1params: ["0x85d995eba9763907fdf35cd2034144dd9d53ce32cbec21349d4b12823c6860c5"]2
- Copy
+params: ["0x85d995eba9763907fdf35cd2034144dd9d53ce32cbec21349d4b12823c6860c5"]
+
 ```
 
 **Returns** `Object` - A transaction receipt object, or `null` when no receipt was found:
@@ -1165,8 +1263,34 @@ Returns the receipt of a transaction by transaction hash.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionReceipt","params":["0x85d995eba9763907fdf35cd2034144dd9d53ce32cbec21349d4b12823c6860c5"],"id":1}'3// Result4{5  "jsonrpc": "2.0",6  "id": 1,7  "result": {8    "blockHash":9      "0xa957d47df264a31badc3ae823e10ac1d444b098d9b73d204c40426e57f47e8c3",10    "blockNumber": "0xeff35f",11    "contractAddress": null, // string of the address if it was created12    "cumulativeGasUsed": "0xa12515",13    "effectiveGasPrice": "0x5a9c688d4",14    "from": "0x6221a9c005f6e47eb398fd867784cacfdcfff4e7",15    "gasUsed": "0xb4c8",16    "logs": [{17      // logs as returned by getFilterLogs, etc.18    }],19    "logsBloom": "0x00...0", // 256 byte bloom filter20    "status": "0x1",21    "to": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",22    "transactionHash":23      "0x85d995eba9763907fdf35cd2034144dd9d53ce32cbec21349d4b12823c6860c5",24    "transactionIndex": "0x66",25    "type": "0x2"26  }27}28
-Show all Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionReceipt","params":["0x85d995eba9763907fdf35cd2034144dd9d53ce32cbec21349d4b12823c6860c5"],"id":1}'
+// Result
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "blockHash":
+      "0xa957d47df264a31badc3ae823e10ac1d444b098d9b73d204c40426e57f47e8c3",
+    "blockNumber": "0xeff35f",
+    "contractAddress": null, // string of the address if it was created
+    "cumulativeGasUsed": "0xa12515",
+    "effectiveGasPrice": "0x5a9c688d4",
+    "from": "0x6221a9c005f6e47eb398fd867784cacfdcfff4e7",
+    "gasUsed": "0xb4c8",
+    "logs": [{
+      // logs as returned by getFilterLogs, etc.
+    }],
+    "logsBloom": "0x00...0", // 256 byte bloom filter
+    "status": "0x1",
+    "to": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+    "transactionHash":
+      "0x85d995eba9763907fdf35cd2034144dd9d53ce32cbec21349d4b12823c6860c5",
+    "transactionIndex": "0x66",
+    "type": "0x2"
+  }
+}
+
 ```
 
 #### eth\_getUncleByBlockHashAndIndex <a href="#eth_getunclebyblockhashandindex" id="eth_getunclebyblockhashandindex"></a>
@@ -1179,8 +1303,11 @@ Returns information about a uncle of a block by hash and uncle index position.
 2. `QUANTITY` - The uncle's index position.
 
 ```
-1params: [2  "0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b",3  "0x0", // 04]5
- Copy
+params: [
+  "0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b",
+  "0x0", // 0
+]
+
 ```
 
 **Returns** See [eth\_getBlockByHash](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth\_getblockbyhash)
@@ -1188,8 +1315,9 @@ Returns information about a uncle of a block by hash and uncle index position.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getUncleByBlockHashAndIndex","params":["0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b", "0x0"],"id":1}'3
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getUncleByBlockHashAndIndex","params":["0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b", "0x0"],"id":1}'
+
 ```
 
 Result see [eth\_getBlockByHash](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth\_getblockbyhash)
@@ -1206,8 +1334,11 @@ Returns information about a uncle of a block by number and uncle index position.
 2. `QUANTITY` - the uncle's index position.
 
 ```
-1params: [2  "0x29c", // 6683  "0x0", // 04]5
- Copy
+params: [
+  "0x29c", // 668
+  "0x0", // 0
+]
+
 ```
 
 **Returns** See [eth\_getBlockByHash](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth\_getblockbyhash)
@@ -1217,8 +1348,9 @@ Returns information about a uncle of a block by number and uncle index position.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getUncleByBlockNumberAndIndex","params":["0x29c", "0x0"],"id":1}'3
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getUncleByBlockNumberAndIndex","params":["0x29c", "0x0"],"id":1}'
+
 ```
 
 Result see [eth\_getBlockByHash](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth\_getblockbyhash)
@@ -1234,8 +1366,15 @@ Returns a list of available compilers in the client.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getCompilers","params":[],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": ["solidity", "lll", "serpent"]8}9
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getCompilers","params":[],"id":1}'
+// Result
+{
+  "id":1,
+  "jsonrpc": "2.0",
+  "result": ["solidity", "lll", "serpent"]
+}
+
 ```
 
 #### eth\_compileSolidity <a href="#eth_compile_solidity" id="eth_compile_solidity"></a>
@@ -1247,8 +1386,10 @@ Returns compiled solidity code.
 1. `String` - The source code.
 
 ```
-1params: [2  "contract test { function multiply(uint a) returns(uint d) {   return a * 7;   } }",3]4
- Copy
+params: [
+  "contract test { function multiply(uint a) returns(uint d) {   return a * 7;   } }",
+]
+
 ```
 
 **Returns** `DATA` - The compiled source code.
@@ -1256,8 +1397,47 @@ Returns compiled solidity code.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_compileSolidity","params":["contract test { function multiply(uint a) returns(uint d) {   return a * 7;   } }"],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": {8      "code": "0x605880600c6000396000f3006000357c010000000000000000000000000000000000000000000000000000000090048063c6888fa114602e57005b603d6004803590602001506047565b8060005260206000f35b60006007820290506053565b91905056",9      "info": {10        "source": "contract test {\n   function multiply(uint a) constant returns(uint d) {\n       return a * 7;\n   }\n}\n",11        "language": "Solidity",12        "languageVersion": "0",13        "compilerVersion": "0.9.19",14        "abiDefinition": [15          {16            "constant": true,17            "inputs": [18              {19                "name": "a",20                "type": "uint256"21              }22            ],23            "name": "multiply",24            "outputs": [25              {26                "name": "d",27                "type": "uint256"28              }29            ],30            "type": "function"31          }32        ],33        "userDoc": {34          "methods": {}35        },36        "developerDoc": {37          "methods": {}38        }39      }40}41
-Show all Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_compileSolidity","params":["contract test { function multiply(uint a) returns(uint d) {   return a * 7;   } }"],"id":1}'
+// Result
+{
+  "id":1,
+  "jsonrpc": "2.0",
+  "result": {
+      "code": "0x605880600c6000396000f3006000357c010000000000000000000000000000000000000000000000000000000090048063c6888fa114602e57005b603d6004803590602001506047565b8060005260206000f35b60006007820290506053565b91905056",
+      "info": {
+        "source": "contract test {\n   function multiply(uint a) constant returns(uint d) {\n       return a * 7;\n   }\n}\n",
+        "language": "Solidity",
+        "languageVersion": "0",
+        "compilerVersion": "0.9.19",
+        "abiDefinition": [
+          {
+            "constant": true,
+            "inputs": [
+              {
+                "name": "a",
+                "type": "uint256"
+              }
+            ],
+            "name": "multiply",
+            "outputs": [
+              {
+                "name": "d",
+                "type": "uint256"
+              }
+            ],
+            "type": "function"
+          }
+        ],
+        "userDoc": {
+          "methods": {}
+        },
+        "developerDoc": {
+          "methods": {}
+        }
+      }
+}
+
 ```
 
 #### eth\_compileLLL <a href="#eth_compilelll" id="eth_compilelll"></a>
@@ -1269,8 +1449,8 @@ Returns compiled LLL code.
 1. `String` - The source code.
 
 ```
-1params: ["(returnlll (suicide (caller)))"]2
- Copy
+params: ["(returnlll (suicide (caller)))"]
+
 ```
 
 **Returns** `DATA` - The compiled source code.
@@ -1278,8 +1458,15 @@ Returns compiled LLL code.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_compileLLL","params":["(returnlll (suicide (caller)))"],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": "0x603880600c6000396000f3006001600060e060020a600035048063c6888fa114601857005b6021600435602b565b8060005260206000f35b600081600702905091905056" // the compiled source code8}9
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_compileLLL","params":["(returnlll (suicide (caller)))"],"id":1}'
+// Result
+{
+  "id":1,
+  "jsonrpc": "2.0",
+  "result": "0x603880600c6000396000f3006001600060e060020a600035048063c6888fa114601857005b6021600435602b565b8060005260206000f35b600081600702905091905056" // the compiled source code
+}
+
 ```
 
 #### eth\_compileSerpent <a href="#eth_compileserpent" id="eth_compileserpent"></a>
@@ -1291,8 +1478,8 @@ Returns compiled serpent code.
 1. `String` - The source code.
 
 ```
-1params: ["/* some serpent */"]2
- Copy
+params: ["/* some serpent */"]
+
 ```
 
 **Returns** `DATA` - The compiled source code.
@@ -1300,8 +1487,15 @@ Returns compiled serpent code.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_compileSerpent","params":["/* some serpent */"],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": "0x603880600c6000396000f3006001600060e060020a600035048063c6888fa114601857005b6021600435602b565b8060005260206000f35b600081600702905091905056" // the compiled source code8}9
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_compileSerpent","params":["/* some serpent */"],"id":1}'
+// Result
+{
+  "id":1,
+  "jsonrpc": "2.0",
+  "result": "0x603880600c6000396000f3006001600060e060020a600035048063c6888fa114601857005b6021600435602b565b8060005260206000f35b600081600702905091905056" // the compiled source code
+}
+
 ```
 
 #### eth\_newFilter <a href="#eth_newfilter" id="eth_newfilter"></a>
@@ -1325,8 +1519,22 @@ Creates a filter object, based on filter options, to notify when the state chang
 * `topics`: `Array of DATA`, - (optional) Array of 32 Bytes `DATA` topics. Topics are order-dependent. Each topic can also be an array of DATA with "or" options.
 
 ```
-1params: [2  {3    fromBlock: "0x1",4    toBlock: "0x2",5    address: "0x8888f1f195afa192cfee860698584c030f4c9db1",6    topics: [7      "0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b",8      null,9      [10        "0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b",11        "0x0000000000000000000000000aff3454fce5edbc8cca8697c15331677e6ebccc",12      ],13    ],14  },15]16
-Show all Copy
+params: [
+  {
+    fromBlock: "0x1",
+    toBlock: "0x2",
+    address: "0x8888f1f195afa192cfee860698584c030f4c9db1",
+    topics: [
+      "0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b",
+      null,
+      [
+        "0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b",
+        "0x0000000000000000000000000aff3454fce5edbc8cca8697c15331677e6ebccc",
+      ],
+    ],
+  },
+]
+
 ```
 
 **Returns** `QUANTITY` - A filter id.
@@ -1334,8 +1542,15 @@ Show all Copy
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_newFilter","params":[{"topics":["0x12341234"]}],"id":73}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": "0x1" // 18}9
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_newFilter","params":[{"topics":["0x12341234"]}],"id":73}'
+// Result
+{
+  "id":1,
+  "jsonrpc": "2.0",
+  "result": "0x1" // 1
+}
+
 ```
 
 #### eth\_newBlockFilter <a href="#eth_newblockfilter" id="eth_newblockfilter"></a>
@@ -1349,8 +1564,15 @@ Creates a filter in the node, to notify when a new block arrives. To check if th
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_newBlockFilter","params":[],"id":73}'3// Result4{5  "id":1,6  "jsonrpc":  "2.0",7  "result": "0x1" // 18}9
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_newBlockFilter","params":[],"id":73}'
+// Result
+{
+  "id":1,
+  "jsonrpc":  "2.0",
+  "result": "0x1" // 1
+}
+
 ```
 
 #### eth\_newPendingTransactionFilter <a href="#eth_newpendingtransactionfilter" id="eth_newpendingtransactionfilter"></a>
@@ -1364,8 +1586,15 @@ Creates a filter in the node, to notify when new pending transactions arrive. To
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_newPendingTransactionFilter","params":[],"id":73}'3// Result4{5  "id":1,6  "jsonrpc":  "2.0",7  "result": "0x1" // 18}9
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_newPendingTransactionFilter","params":[],"id":73}'
+// Result
+{
+  "id":1,
+  "jsonrpc":  "2.0",
+  "result": "0x1" // 1
+}
+
 ```
 
 #### eth\_uninstallFilter <a href="#eth_uninstallfilter" id="eth_uninstallfilter"></a>
@@ -1377,8 +1606,10 @@ Uninstalls a filter with given id. Should always be called when watch is no long
 1. `QUANTITY` - The filter id.
 
 ```
-1params: [2  "0xb", // 113]4
- Copy
+params: [
+  "0xb", // 11
+]
+
 ```
 
 **Returns** `Boolean` - `true` if the filter was successfully uninstalled, otherwise `false`.
@@ -1386,8 +1617,15 @@ Uninstalls a filter with given id. Should always be called when watch is no long
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_uninstallFilter","params":["0xb"],"id":73}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": true8}9
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_uninstallFilter","params":["0xb"],"id":73}'
+// Result
+{
+  "id":1,
+  "jsonrpc": "2.0",
+  "result": true
+}
+
 ```
 
 #### eth\_getFilterChanges <a href="#eth_getfilterchanges" id="eth_getfilterchanges"></a>
@@ -1399,8 +1637,10 @@ Polling method for a filter, which returns an array of logs which occurred since
 1. `QUANTITY` - the filter id.
 
 ```
-1params: [2  "0x16", // 223]4
- Copy
+params: [
+  "0x16", // 22
+]
+
 ```
 
 **Returns** `Array` - Array of log objects, or an empty array if nothing has changed since last poll.
@@ -1420,8 +1660,26 @@ Polling method for a filter, which returns an array of logs which occurred since
 * **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getFilterChanges","params":["0x16"],"id":73}'3// Result4{5  "id":1,6  "jsonrpc":"2.0",7  "result": [{8    "logIndex": "0x1", // 19    "blockNumber":"0x1b4", // 43610    "blockHash": "0x8216c5785ac562ff41e2dcfdf5785ac562ff41e2dcfdf829c5a142f1fccd7d",11    "transactionHash":  "0xdf829c5a142f1fccd7d8216c5785ac562ff41e2dcfdf5785ac562ff41e2dcf",12    "transactionIndex": "0x0", // 013    "address": "0x16c5785ac562ff41e2dcfdf829c5a142f1fccd7d",14    "data":"0x0000000000000000000000000000000000000000000000000000000000000000",15    "topics": ["0x59ebeb90bc63057b6515673c3ecf9438e5058bca0f92585014eced636878c9a5"]16    },{17      ...18    }]19}20
-Show all Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getFilterChanges","params":["0x16"],"id":73}'
+// Result
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result": [{
+    "logIndex": "0x1", // 1
+    "blockNumber":"0x1b4", // 436
+    "blockHash": "0x8216c5785ac562ff41e2dcfdf5785ac562ff41e2dcfdf829c5a142f1fccd7d",
+    "transactionHash":  "0xdf829c5a142f1fccd7d8216c5785ac562ff41e2dcfdf5785ac562ff41e2dcf",
+    "transactionIndex": "0x0", // 0
+    "address": "0x16c5785ac562ff41e2dcfdf829c5a142f1fccd7d",
+    "data":"0x0000000000000000000000000000000000000000000000000000000000000000",
+    "topics": ["0x59ebeb90bc63057b6515673c3ecf9438e5058bca0f92585014eced636878c9a5"]
+    },{
+      ...
+    }]
+}
+
 ```
 
 #### eth\_getFilterLogs <a href="#eth_getfilterlogs" id="eth_getfilterlogs"></a>
@@ -1433,8 +1691,10 @@ Returns an array of all logs matching filter with given id.
 1. `QUANTITY` - The filter id.
 
 ```
-1params: [2  "0x16", // 223]4
- Copy
+params: [
+  "0x16", // 22
+]
+
 ```
 
 **Returns** See [eth\_getFilterChanges](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth\_getfilterchanges)
@@ -1442,8 +1702,9 @@ Returns an array of all logs matching filter with given id.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getFilterLogs","params":["0x16"],"id":74}'3
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getFilterLogs","params":["0x16"],"id":74}'
+
 ```
 
 Result see [eth\_getFilterChanges](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth\_getfilterchanges)
@@ -1463,8 +1724,14 @@ Returns an array of all logs matching a given filter object.
 * `blockhash`: `DATA`, 32 Bytes - (optional, **future**) With the addition of EIP-234, `blockHash` will be a new filter option which restricts the logs returned to the single block with the 32-byte hash `blockHash`. Using `blockHash` is equivalent to `fromBlock` = `toBlock` = the block number with hash `blockHash`. If `blockHash` is present in the filter criteria, then neither `fromBlock` nor `toBlock` are allowed.
 
 ```
-1params: [2  {3    topics: [4      "0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b",5    ],6  },7]8
- Copy
+params: [
+  {
+    topics: [
+      "0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b",
+    ],
+  },
+]
+
 ```
 
 **Returns** See [eth\_getFilterChanges](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth\_getfilterchanges)
@@ -1472,8 +1739,9 @@ Returns an array of all logs matching a given filter object.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getLogs","params":[{"topics":["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b"]}],"id":74}'3
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getLogs","params":[{"topics":["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b"]}],"id":74}'
+
 ```
 
 Result see [eth\_getFilterChanges](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth\_getfilterchanges)
@@ -1493,8 +1761,19 @@ Returns the hash of the current block, the seedHash, and the boundary condition 
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getWork","params":[],"id":73}'3// Result4{5  "id":1,6  "jsonrpc":"2.0",7  "result": [8      "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",9      "0x5EED00000000000000000000000000005EED0000000000000000000000000000",10      "0xd1ff1c01710000000000000000000000d1ff1c01710000000000000000000000"11    ]12}13
-Show all Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getWork","params":[],"id":73}'
+// Result
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result": [
+      "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
+      "0x5EED00000000000000000000000000005EED0000000000000000000000000000",
+      "0xd1ff1c01710000000000000000000000d1ff1c01710000000000000000000000"
+    ]
+}
+
 ```
 
 #### eth\_submitWork <a href="#eth_submitwork" id="eth_submitwork"></a>
@@ -1508,8 +1787,12 @@ Used for submitting a proof-of-work solution.
 3. `DATA`, 32 Bytes - The mix digest (256 bits)
 
 ```
-1params: [2  "0x0000000000000001",3  "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",4  "0xD1FE5700000000000000000000000000D1FE5700000000000000000000000000",5]6
- Copy
+params: [
+  "0x0000000000000001",
+  "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
+  "0xD1FE5700000000000000000000000000D1FE5700000000000000000000000000",
+]
+
 ```
 
 **Returns** `Boolean` - returns `true` if the provided solution is valid, otherwise `false`.
@@ -1517,8 +1800,15 @@ Used for submitting a proof-of-work solution.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0", "method":"eth_submitWork", "params":["0x0000000000000001", "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef", "0xD1GE5700000000000000000000000000D1GE5700000000000000000000000000"],"id":73}'3// Result4{5  "id":73,6  "jsonrpc":"2.0",7  "result": true8}9
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0", "method":"eth_submitWork", "params":["0x0000000000000001", "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef", "0xD1GE5700000000000000000000000000D1GE5700000000000000000000000000"],"id":73}'
+// Result
+{
+  "id":73,
+  "jsonrpc":"2.0",
+  "result": true
+}
+
 ```
 
 #### eth\_submitHashrate <a href="#eth_submithashrate" id="eth_submithashrate"></a>
@@ -1531,8 +1821,11 @@ Used for submitting mining hashrate.
 2. `ID`, String - A random hexadecimal(32 bytes) ID identifying the client
 
 ```
-1params: [2  "0x0000000000000000000000000000000000000000000000000000000000500000",3  "0x59daa26581d0acd1fce254fb7e85952f4c09d0915afd33d3886cd914bc7d283c",4]5
- Copy
+params: [
+  "0x0000000000000000000000000000000000000000000000000000000000500000",
+  "0x59daa26581d0acd1fce254fb7e85952f4c09d0915afd33d3886cd914bc7d283c",
+]
+
 ```
 
 **Returns** `Boolean` - returns `true` if submitting went through successfully and `false` otherwise.
@@ -1540,8 +1833,15 @@ Used for submitting mining hashrate.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0", "method":"eth_submitHashrate", "params":["0x0000000000000000000000000000000000000000000000000000000000500000", "0x59daa26581d0acd1fce254fb7e85952f4c09d0915afd33d3886cd914bc7d283c"],"id":73}'3// Result4{5  "id":73,6  "jsonrpc":"2.0",7  "result": true8}9
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0", "method":"eth_submitHashrate", "params":["0x0000000000000000000000000000000000000000000000000000000000500000", "0x59daa26581d0acd1fce254fb7e85952f4c09d0915afd33d3886cd914bc7d283c"],"id":73}'
+// Result
+{
+  "id":73,
+  "jsonrpc":"2.0",
+  "result": true
+}
+
 ```
 
 #### db\_putString (deprecated) <a href="#db_putstring" id="db_putstring"></a>
@@ -1557,8 +1857,8 @@ Stores a string in the local database.
 3. `String` - String to store.
 
 ```
-1params: ["testDB", "myKey", "myString"]2
- Copy
+params: ["testDB", "myKey", "myString"]
+
 ```
 
 **Returns** `Boolean` - returns `true` if the value was stored, otherwise `false`.
@@ -1566,8 +1866,15 @@ Stores a string in the local database.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"db_putString","params":["testDB","myKey","myString"],"id":73}'3// Result4{5  "id":1,6  "jsonrpc":"2.0",7  "result": true8}9
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"db_putString","params":["testDB","myKey","myString"],"id":73}'
+// Result
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result": true
+}
+
 ```
 
 #### db\_getString (deprecated) <a href="#db_getstring" id="db_getstring"></a>
@@ -1580,8 +1887,8 @@ Returns string from the local database. **Note** this function is deprecated.
 2. `String` - Key name.
 
 ```
-1params: ["testDB", "myKey"]2
- Copy
+params: ["testDB", "myKey"]
+
 ```
 
 **Returns** `String` - The previously stored string.
@@ -1589,8 +1896,15 @@ Returns string from the local database. **Note** this function is deprecated.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"db_getString","params":["testDB","myKey"],"id":73}'3// Result4{5  "id":1,6  "jsonrpc":"2.0",7  "result": "myString"8}9
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"db_getString","params":["testDB","myKey"],"id":73}'
+// Result
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result": "myString"
+}
+
 ```
 
 #### db\_putHex (deprecated) <a href="#db_puthex" id="db_puthex"></a>
@@ -1604,8 +1918,8 @@ Stores binary data in the local database. **Note** this function is deprecated.
 3. `DATA` - The data to store.
 
 ```
-1params: ["testDB", "myKey", "0x68656c6c6f20776f726c64"]2
- Copy
+params: ["testDB", "myKey", "0x68656c6c6f20776f726c64"]
+
 ```
 
 **Returns** `Boolean` - returns `true` if the value was stored, otherwise `false`.
@@ -1613,8 +1927,15 @@ Stores binary data in the local database. **Note** this function is deprecated.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"db_putHex","params":["testDB","myKey","0x68656c6c6f20776f726c64"],"id":73}'3// Result4{5  "id":1,6  "jsonrpc":"2.0",7  "result": true8}9
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"db_putHex","params":["testDB","myKey","0x68656c6c6f20776f726c64"],"id":73}'
+// Result
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result": true
+}
+
 ```
 
 #### db\_getHex (deprecated) <a href="#db_gethex" id="db_gethex"></a>
@@ -1627,8 +1948,8 @@ Returns binary data from the local database. **Note** this function is deprecate
 2. `String` - Key name.
 
 ```
-1params: ["testDB", "myKey"]2
- Copy
+params: ["testDB", "myKey"]
+
 ```
 
 **Returns** `DATA` - The previously stored data.
@@ -1636,8 +1957,15 @@ Returns binary data from the local database. **Note** this function is deprecate
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"db_getHex","params":["testDB","myKey"],"id":73}'3// Result4{5  "id":1,6  "jsonrpc":"2.0",7  "result": "0x68656c6c6f20776f726c64"8}9
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"db_getHex","params":["testDB","myKey"],"id":73}'
+// Result
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result": "0x68656c6c6f20776f726c64"
+}
+
 ```
 
 #### shh\_version (deprecated) <a href="#shh_post" id="shh_post"></a>
@@ -1653,8 +1981,15 @@ Returns the current whisper protocol version.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"shh_version","params":[],"id":67}'3// Result4{5  "id":67,6  "jsonrpc": "2.0",7  "result": "2"8}9
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"shh_version","params":[],"id":67}'
+// Result
+{
+  "id":67,
+  "jsonrpc": "2.0",
+  "result": "2"
+}
+
 ```
 
 #### shh\_post (deprecated) <a href="#shh_version" id="shh_version"></a>
@@ -1675,8 +2010,20 @@ Sends a whisper message.
 * `ttl`: `QUANTITY` - integer of the time to live in seconds.
 
 ```
-1params: [2  {3    from: "0x04f96a5e25610293e42a73908e93ccc8c4d4dc0edcfa9fa872f50cb214e08ebf61a03e245533f97284d442460f2998cd41858798ddfd4d661997d3940272b717b1",4    to: "0x3e245533f97284d442460f2998cd41858798ddf04f96a5e25610293e42a73908e93ccc8c4d4dc0edcfa9fa872f50cb214e08ebf61a0d4d661997d3940272b717b1",5    topics: [6      "0x776869737065722d636861742d636c69656e74",7      "0x4d5a695276454c39425154466b61693532",8    ],9    payload: "0x7b2274797065223a226d6",10    priority: "0x64",11    ttl: "0x64",12  },13]14
-Show all Copy
+params: [
+  {
+    from: "0x04f96a5e25610293e42a73908e93ccc8c4d4dc0edcfa9fa872f50cb214e08ebf61a03e245533f97284d442460f2998cd41858798ddfd4d661997d3940272b717b1",
+    to: "0x3e245533f97284d442460f2998cd41858798ddf04f96a5e25610293e42a73908e93ccc8c4d4dc0edcfa9fa872f50cb214e08ebf61a0d4d661997d3940272b717b1",
+    topics: [
+      "0x776869737065722d636861742d636c69656e74",
+      "0x4d5a695276454c39425154466b61693532",
+    ],
+    payload: "0x7b2274797065223a226d6",
+    priority: "0x64",
+    ttl: "0x64",
+  },
+]
+
 ```
 
 **Returns** `Boolean` - returns `true` if the message was send, otherwise `false`.
@@ -1684,8 +2031,15 @@ Show all Copy
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"shh_post","params":[{"from":"0xc931d93e97ab07fe42d923478ba2465f2..","topics": ["0x68656c6c6f20776f726c64"],"payload":"0x68656c6c6f20776f726c64","ttl":0x64,"priority":0x64}],"id":73}'3// Result4{5  "id":1,6  "jsonrpc":"2.0",7  "result": true8}9
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"shh_post","params":[{"from":"0xc931d93e97ab07fe42d923478ba2465f2..","topics": ["0x68656c6c6f20776f726c64"],"payload":"0x68656c6c6f20776f726c64","ttl":0x64,"priority":0x64}],"id":73}'
+// Result
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result": true
+}
+
 ```
 
 #### shh\_newIdentity (deprecated) <a href="#shh_newidentity" id="shh_newidentity"></a>
@@ -1701,8 +2055,15 @@ Creates new whisper identity in the client.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"shh_newIdentity","params":[],"id":73}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": "0xc931d93e97ab07fe42d923478ba2465f283f440fd6cabea4dd7a2c807108f651b7135d1d6ca9007d5b68aa497e4619ac10aa3b27726e1863c1fd9b570d99bbaf"8}9
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"shh_newIdentity","params":[],"id":73}'
+// Result
+{
+  "id":1,
+  "jsonrpc": "2.0",
+  "result": "0xc931d93e97ab07fe42d923478ba2465f283f440fd6cabea4dd7a2c807108f651b7135d1d6ca9007d5b68aa497e4619ac10aa3b27726e1863c1fd9b570d99bbaf"
+}
+
 ```
 
 #### shh\_hasIdentity (deprecated) <a href="#shh_hasidentity" id="shh_hasidentity"></a>
@@ -1716,8 +2077,10 @@ Checks if the client hold the private keys for a given identity.
 1. `DATA`, 60 Bytes - The identity address to check.
 
 ```
-1params: [2  "0x04f96a5e25610293e42a73908e93ccc8c4d4dc0edcfa9fa872f50cb214e08ebf61a03e245533f97284d442460f2998cd41858798ddfd4d661997d3940272b717b1",3]4
- Copy
+params: [
+  "0x04f96a5e25610293e42a73908e93ccc8c4d4dc0edcfa9fa872f50cb214e08ebf61a03e245533f97284d442460f2998cd41858798ddfd4d661997d3940272b717b1",
+]
+
 ```
 
 **Returns** `Boolean` - returns `true` if the client holds the privatekey for that identity, otherwise `false`.
@@ -1725,8 +2088,15 @@ Checks if the client hold the private keys for a given identity.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"shh_hasIdentity","params":["0x04f96a5e25610293e42a73908e93ccc8c4d4dc0edcfa9fa872f50cb214e08ebf61a03e245533f97284d442460f2998cd41858798ddfd4d661997d3940272b717b1"],"id":73}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": true8}9
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"shh_hasIdentity","params":["0x04f96a5e25610293e42a73908e93ccc8c4d4dc0edcfa9fa872f50cb214e08ebf61a03e245533f97284d442460f2998cd41858798ddfd4d661997d3940272b717b1"],"id":73}'
+// Result
+{
+  "id":1,
+  "jsonrpc": "2.0",
+  "result": true
+}
+
 ```
 
 #### shh\_newGroup (deprecated) <a href="#shh_newgroup" id="shh_newgroup"></a>
@@ -1740,8 +2110,15 @@ Checks if the client hold the private keys for a given identity.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"shh_newGroup","params":[],"id":73}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": "0xc65f283f440fd6cabea4dd7a2c807108f651b7135d1d6ca90931d93e97ab07fe42d923478ba2407d5b68aa497e4619ac10aa3b27726e1863c1fd9b570d99bbaf"8}9
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"shh_newGroup","params":[],"id":73}'
+// Result
+{
+  "id":1,
+  "jsonrpc": "2.0",
+  "result": "0xc65f283f440fd6cabea4dd7a2c807108f651b7135d1d6ca90931d93e97ab07fe42d923478ba2407d5b68aa497e4619ac10aa3b27726e1863c1fd9b570d99bbaf"
+}
+
 ```
 
 #### shh\_addToGroup (deprecated) <a href="#shh_addtogroup" id="shh_addtogroup"></a>
@@ -1753,8 +2130,10 @@ Checks if the client hold the private keys for a given identity.
 1. `DATA`, 60 Bytes - The identity address to add to a group (?).
 
 ```
-1params: [2  "0x04f96a5e25610293e42a73908e93ccc8c4d4dc0edcfa9fa872f50cb214e08ebf61a03e245533f97284d442460f2998cd41858798ddfd4d661997d3940272b717b1",3]4
- Copy
+params: [
+  "0x04f96a5e25610293e42a73908e93ccc8c4d4dc0edcfa9fa872f50cb214e08ebf61a03e245533f97284d442460f2998cd41858798ddfd4d661997d3940272b717b1",
+]
+
 ```
 
 **Returns** `Boolean` - returns `true` if the identity was successfully added to the group, otherwise `false` (?).
@@ -1762,8 +2141,15 @@ Checks if the client hold the private keys for a given identity.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"shh_addToGroup","params":["0x04f96a5e25610293e42a73908e93ccc8c4d4dc0edcfa9fa872f50cb214e08ebf61a03e245533f97284d442460f2998cd41858798ddfd4d661997d3940272b717b1"],"id":73}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": true8}9
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"shh_addToGroup","params":["0x04f96a5e25610293e42a73908e93ccc8c4d4dc0edcfa9fa872f50cb214e08ebf61a03e245533f97284d442460f2998cd41858798ddfd4d661997d3940272b717b1"],"id":73}'
+// Result
+{
+  "id":1,
+  "jsonrpc": "2.0",
+  "result": true
+}
+
 ```
 
 #### shh\_newFilter (deprecated) <a href="#shh_newfilter" id="shh_newfilter"></a>
@@ -1782,8 +2168,13 @@ Creates filter to notify, when client receives whisper message matching the filt
   *
 
 ```
-1params: [2  {3    topics: ["0x12341234bf4b564f"],4    to: "0x04f96a5e25610293e42a73908e93ccc8c4d4dc0edcfa9fa872f50cb214e08ebf61a03e245533f97284d442460f2998cd41858798ddfd4d661997d3940272b717b1",5  },6]7
- Copy
+params: [
+  {
+    topics: ["0x12341234bf4b564f"],
+    to: "0x04f96a5e25610293e42a73908e93ccc8c4d4dc0edcfa9fa872f50cb214e08ebf61a03e245533f97284d442460f2998cd41858798ddfd4d661997d3940272b717b1",
+  },
+]
+
 ```
 
 **Returns** `QUANTITY` - The newly created filter.
@@ -1791,8 +2182,15 @@ Creates filter to notify, when client receives whisper message matching the filt
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"shh_newFilter","params":[{"topics": ['0x12341234bf4b564f'],"to": "0x2341234bf4b2341234bf4b564f..."}],"id":73}'3// Result4{5  "id":1,6  "jsonrpc":"2.0",7  "result": "0x7" // 78}9
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"shh_newFilter","params":[{"topics": ['0x12341234bf4b564f'],"to": "0x2341234bf4b2341234bf4b564f..."}],"id":73}'
+// Result
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result": "0x7" // 7
+}
+
 ```
 
 #### shh\_uninstallFilter (deprecated) <a href="#shh_uninstallfilter" id="shh_uninstallfilter"></a>
@@ -1804,8 +2202,10 @@ Uninstalls a filter with given id. Should always be called when watch is no long
 1. `QUANTITY` - The filter id.
 
 ```
-1params: [2  "0x7", // 73]4
- Copy
+params: [
+  "0x7", // 7
+]
+
 ```
 
 **Returns** `Boolean` - `true` if the filter was successfully uninstalled, otherwise `false`.
@@ -1813,8 +2213,15 @@ Uninstalls a filter with given id. Should always be called when watch is no long
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"shh_uninstallFilter","params":["0x7"],"id":73}'3// Result4{5  "id":1,6  "jsonrpc":"2.0",7  "result": true8}9
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"shh_uninstallFilter","params":["0x7"],"id":73}'
+// Result
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result": true
+}
+
 ```
 
 #### shh\_getFilterChanges (deprecated) <a href="#shh_getfilterchanges" id="shh_getfilterchanges"></a>
@@ -1826,8 +2233,10 @@ Polling method for whisper filters. Returns new messages since the last call of 
 1. `QUANTITY` - The filter id.
 
 ```
-1params: [2  "0x7", // 73]4
- Copy
+params: [
+  "0x7", // 7
+]
+
 ```
 
 **Returns** `Array` - Array of messages received since last poll:
@@ -1845,8 +2254,25 @@ Polling method for whisper filters. Returns new messages since the last call of 
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"shh_getFilterChanges","params":["0x7"],"id":73}'3// Result4{5  "id":1,6  "jsonrpc":"2.0",7  "result": [{8    "hash": "0x33eb2da77bf3527e28f8bf493650b1879b08c4f2a362beae4ba2f71bafcd91f9",9    "from": "0x3ec052fc33..",10    "to": "0x87gdf76g8d7fgdfg...",11    "expiry": "0x54caa50a", // 142256666612    "sent": "0x54ca9ea2", // 142256502613    "ttl": "0x64", // 10014    "topics": ["0x6578616d"],15    "payload": "0x7b2274797065223a226d657373616765222c2263686...",16    "workProved": "0x0"17    }]18}19
-Show all Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"shh_getFilterChanges","params":["0x7"],"id":73}'
+// Result
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "result": [{
+    "hash": "0x33eb2da77bf3527e28f8bf493650b1879b08c4f2a362beae4ba2f71bafcd91f9",
+    "from": "0x3ec052fc33..",
+    "to": "0x87gdf76g8d7fgdfg...",
+    "expiry": "0x54caa50a", // 1422566666
+    "sent": "0x54ca9ea2", // 1422565026
+    "ttl": "0x64", // 100
+    "topics": ["0x6578616d"],
+    "payload": "0x7b2274797065223a226d657373616765222c2263686...",
+    "workProved": "0x0"
+    }]
+}
+
 ```
 
 #### shh\_getMessages (deprecated) <a href="#shh_getmessages" id="shh_getmessages"></a>
@@ -1860,8 +2286,10 @@ Get all messages matching a filter. Unlike `shh_getFilterChanges` this returns a
 1. `QUANTITY` - The filter id.
 
 ```
-1params: [2  "0x7", // 73]4
- Copy
+params: [
+  "0x7", // 7
+]
+
 ```
 
 **Returns** See [shh\_getFilterChanges](https://ethereum.org/en/developers/docs/apis/json-rpc/#shh\_getfilterchanges)
@@ -1869,8 +2297,10 @@ Get all messages matching a filter. Unlike `shh_getFilterChanges` this returns a
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"shh_getMessages","params":["0x7"3],"id":73}'4
- Copy
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"shh_getMessages","params":["0x7"
+],"id":73}'
+
 ```
 
 Result see [shh\_getFilterChanges](https://ethereum.org/en/developers/docs/apis/json-rpc/#shh\_getfilterchanges)
@@ -1884,7 +2314,13 @@ This section includes a demonstration of how to deploy a contract using only the
 The following is a straightforward smart contract called `Multiply7` that will be deployed using the JSON-RPC interface to an Ethereum node. This tutorial assumes the reader is already running a Geth node. More information on nodes and clients is available [here](https://ethereum.org/en/developers/docs/nodes-and-clients/run-a-node/). Please refer to individual [client](https://ethereum.org/en/developers/docs/nodes-and-clients/) documentation to see how to start the HTTP JSON-RPC for non-Geth clients. Most clients default to serving on `localhost:8545`.
 
 ```
-1contract Multiply7 {2    event Print(uint);3    function multiply(uint input) returns (uint) {4        Print(input * 7);5        return input * 7;6    }7}8
+contract Multiply7 {
+    event Print(uint);
+    function multiply(uint input) returns (uint) {
+        Print(input * 7);
+        return input * 7;
+    }
+}
 ```
 
 The first thing to do is make sure the HTTP RPC interface is enabled. This means we supply Geth with the `--http` flag on startup. In this example we use the Geth node on a private development chain. Using this approach we don't need ether on the real network.
@@ -1898,14 +2334,19 @@ This will start the HTTP RPC interface on `http://localhost:8545`.
 We can verify that the interface is running by retrieving the Coinbase address and balance using [curl](https://curl.se/). Please note that data in these examples will differ on your local node. If you want to try these commands, replace the request params in the second curl request with the result returned from the first.
 
 ```
-curl --data '{"jsonrpc":"2.0","method":"eth_coinbase", "id":1}' -H "Content-Type: application/json" localhost:8545{"id":1,"jsonrpc":"2.0","result":["0x9b1d35635cc34752ca54713bb99d38614f63c955"]}
-curl --data '{"jsonrpc":"2.0","method":"eth_getBalance", "params": ["0x9b1d35635cc34752ca54713bb99d38614f63c955", "latest"], "id":2}' -H "Content-Type: application/json" localhost:8545{"id":2,"jsonrpc":"2.0","result":"0x1639e49bba16280000"}
+curl --data '{"jsonrpc":"2.0","method":"eth_coinbase", "id":1}' -H "Content-Type: application/json" localhost:8545
+{"id":1,"jsonrpc":"2.0","result":["0x9b1d35635cc34752ca54713bb99d38614f63c955"]}
+
+curl --data '{"jsonrpc":"2.0","method":"eth_getBalance", "params": ["0x9b1d35635cc34752ca54713bb99d38614f63c955", "latest"], "id":2}' -H "Content-Type: application/json" localhost:8545
+{"id":2,"jsonrpc":"2.0","result":"0x1639e49bba16280000"}
+
 ```
 
 Because numbers are hex encoded, the balance is returned in wei as a hex string. If we want to have the balance in ether as a number we can use web3 from the Geth console.
 
 ```
-1web3.fromWei("0x1639e49bba16280000", "ether")2// "410"3
+web3.fromWei("0x1639e49bba16280000", "ether")
+// "410"
 ```
 
 Now that there is some ether on our private development chain, we can deploy the contract. The first step is to compile the Multiply7 contract to byte code that can be sent to the EVM. To install solc, the Solidity compiler, follow the [Solidity documentation](https://docs.soliditylang.org/en/latest/installing-solidity.html). (You might want to use an older `solc` release to match [the version of compiler used for our example](https://github.com/ethereum/solidity/releases/tag/v0.4.20).)
@@ -1914,25 +2355,31 @@ The next step is to compile the Multiply7 contract to byte code that can be send
 
 ```
 echo 'pragma solidity ^0.4.16; contract Multiply7 { event Print(uint); function multiply(uint input) public returns (uint) { Print(input * 7); return input * 7; } }' | solc --bin
-======= <stdin>:Multiply7 =======Binary:6060604052341561000f57600080fd5b60eb8061001d6000396000f300606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063c6888fa1146044575b600080fd5b3415604e57600080fd5b606260048080359060200190919050506078565b6040518082815260200191505060405180910390f35b60007f24abdb5865df5079dcc5ac590ff6f01d5c16edbc5fab4e195d9febd1114503da600783026040518082815260200191505060405180910390a16007820290509190505600a165627a7a7230582040383f19d9f65246752244189b02f56e8d0980ed44e7a56c0b200458caad20bb0029
+
+======= <stdin>:Multiply7 =======
+Binary:
+6060604052341561000f57600080fd5b60eb8061001d6000396000f300606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063c6888fa1146044575b600080fd5b3415604e57600080fd5b606260048080359060200190919050506078565b6040518082815260200191505060405180910390f35b60007f24abdb5865df5079dcc5ac590ff6f01d5c16edbc5fab4e195d9febd1114503da600783026040518082815260200191505060405180910390a16007820290509190505600a165627a7a7230582040383f19d9f65246752244189b02f56e8d0980ed44e7a56c0b200458caad20bb0029
 ```
 
 Now that we have the compiled code we need to determine how much gas it costs to deploy it. The RPC interface has an `eth_estimateGas` method that will give us an estimate.
 
 ```
-curl --data '{"jsonrpc":"2.0","method": "eth_estimateGas", "params": [{"from": "0x9b1d35635cc34752ca54713bb99d38614f63c955", "data": "0x6060604052341561000f57600080fd5b60eb8061001d6000396000f300606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063c6888fa1146044575b600080fd5b3415604e57600080fd5b606260048080359060200190919050506078565b6040518082815260200191505060405180910390f35b60007f24abdb5865df5079dcc5ac590ff6f01d5c16edbc5fab4e195d9febd1114503da600783026040518082815260200191505060405180910390a16007820290509190505600a165627a7a7230582040383f19d9f65246752244189b02f56e8d0980ed44e7a56c0b200458caad20bb0029"}], "id": 5}' -H "Content-Type: application/json" localhost:8545{"jsonrpc":"2.0","id":5,"result":"0x1c31e"}
+curl --data '{"jsonrpc":"2.0","method": "eth_estimateGas", "params": [{"from": "0x9b1d35635cc34752ca54713bb99d38614f63c955", "data": "0x6060604052341561000f57600080fd5b60eb8061001d6000396000f300606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063c6888fa1146044575b600080fd5b3415604e57600080fd5b606260048080359060200190919050506078565b6040518082815260200191505060405180910390f35b60007f24abdb5865df5079dcc5ac590ff6f01d5c16edbc5fab4e195d9febd1114503da600783026040518082815260200191505060405180910390a16007820290509190505600a165627a7a7230582040383f19d9f65246752244189b02f56e8d0980ed44e7a56c0b200458caad20bb0029"}], "id": 5}' -H "Content-Type: application/json" localhost:8545
+{"jsonrpc":"2.0","id":5,"result":"0x1c31e"}
 ```
 
 And finally deploy the contract.
 
 ```
-curl --data '{"jsonrpc":"2.0","method": "eth_sendTransaction", "params": [{"from": "0x9b1d35635cc34752ca54713bb99d38614f63c955", "gas": "0x1c31e", "data": "0x6060604052341561000f57600080fd5b60eb8061001d6000396000f300606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063c6888fa1146044575b600080fd5b3415604e57600080fd5b606260048080359060200190919050506078565b6040518082815260200191505060405180910390f35b60007f24abdb5865df5079dcc5ac590ff6f01d5c16edbc5fab4e195d9febd1114503da600783026040518082815260200191505060405180910390a16007820290509190505600a165627a7a7230582040383f19d9f65246752244189b02f56e8d0980ed44e7a56c0b200458caad20bb0029"}], "id": 6}' -H "Content-Type: application/json" localhost:8545{"id":6,"jsonrpc":"2.0","result":"0xe1f3095770633ab2b18081658bad475439f6a08c902d0915903bafff06e6febf"}
+curl --data '{"jsonrpc":"2.0","method": "eth_sendTransaction", "params": [{"from": "0x9b1d35635cc34752ca54713bb99d38614f63c955", "gas": "0x1c31e", "data": "0x6060604052341561000f57600080fd5b60eb8061001d6000396000f300606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063c6888fa1146044575b600080fd5b3415604e57600080fd5b606260048080359060200190919050506078565b6040518082815260200191505060405180910390f35b60007f24abdb5865df5079dcc5ac590ff6f01d5c16edbc5fab4e195d9febd1114503da600783026040518082815260200191505060405180910390a16007820290509190505600a165627a7a7230582040383f19d9f65246752244189b02f56e8d0980ed44e7a56c0b200458caad20bb0029"}], "id": 6}' -H "Content-Type: application/json" localhost:8545
+{"id":6,"jsonrpc":"2.0","result":"0xe1f3095770633ab2b18081658bad475439f6a08c902d0915903bafff06e6febf"}
 ```
 
 The transaction is accepted by the node and a transaction hash is returned. This hash can be used to track the transaction. The next step is to determine the address where our contract is deployed. Each executed transaction will create a receipt. This receipt contains various information about the transaction such as in which block the transaction was included and how much gas was used by the EVM. If a transaction creates a contract it will also contain the contract address. We can retrieve the receipt with the `eth_getTransactionReceipt` RPC method.
 
 ```
-curl --data '{"jsonrpc":"2.0","method": "eth_getTransactionReceipt", "params": ["0xe1f3095770633ab2b18081658bad475439f6a08c902d0915903bafff06e6febf"], "id": 7}' -H "Content-Type: application/json" localhost:8545{"jsonrpc":"2.0","id":7,"result":{"blockHash":"0x77b1a4f6872b9066312de3744f60020cbd8102af68b1f6512a05b7619d527a4f","blockNumber":"0x1","contractAddress":"0x4d03d617d700cf81935d7f797f4e2ae719648262","cumulativeGasUsed":"0x1c31e","from":"0x9b1d35635cc34752ca54713bb99d38614f63c955","gasUsed":"0x1c31e","logs":[],"logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","status":"0x1","to":null,"transactionHash":"0xe1f3095770633ab2b18081658bad475439f6a08c902d0915903bafff06e6febf","transactionIndex":"0x0"}}
+curl --data '{"jsonrpc":"2.0","method": "eth_getTransactionReceipt", "params": ["0xe1f3095770633ab2b18081658bad475439f6a08c902d0915903bafff06e6febf"], "id": 7}' -H "Content-Type: application/json" localhost:8545
+{"jsonrpc":"2.0","id":7,"result":{"blockHash":"0x77b1a4f6872b9066312de3744f60020cbd8102af68b1f6512a05b7619d527a4f","blockNumber":"0x1","contractAddress":"0x4d03d617d700cf81935d7f797f4e2ae719648262","cumulativeGasUsed":"0x1c31e","from":"0x9b1d35635cc34752ca54713bb99d38614f63c955","gasUsed":"0x1c31e","logs":[],"logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","status":"0x1","to":null,"transactionHash":"0xe1f3095770633ab2b18081658bad475439f6a08c902d0915903bafff06e6febf","transactionIndex":"0x0"}}
 ```
 
 Our contract was created on `0x4d03d617d700cf81935d7f797f4e2ae719648262`. A null result instead of a receipt means the transaction has not been included in a block yet. Wait for a moment and check if your miner is running and retry it.
@@ -1946,7 +2393,9 @@ In this example we will be sending a transaction using `eth_sendTransaction` to 
 The bytes of the payload defines which method in the contract is called. This is the first 4 bytes from the Keccak hash over the function name and its argument types, hex encoded. The multiply function accepts an uint which is an alias for uint256. This leaves us with:
 
 ```
-1web3.sha3("multiply(uint256)").substring(0, 10)2// "0xc6888fa1"3
+web3.sha3("multiply(uint256)").substring(0, 10)
+// "0xc6888fa1"
+
 ```
 
 The next step is to encode the arguments. There is only one uint256, say, the value 6. The ABI has a section which specifies how to encode uint256 types.
@@ -1960,20 +2409,39 @@ Combining the function selector and the encoded argument our data will be `0xc68
 This can now be sent to the node:
 
 ```
-curl --data '{"jsonrpc":"2.0","method": "eth_sendTransaction", "params": [{"from": "0xeb85a5557e5bdc18ee1934a89d8bb402398ee26a", "to": "0x6ff93b4b46b41c0c3c9baee01c255d3b4675963d", "data": "0xc6888fa10000000000000000000000000000000000000000000000000000000000000006"}], "id": 8}' -H "Content-Type: application/json" localhost:8545{"id":8,"jsonrpc":"2.0","result":"0x759cf065cbc22e9d779748dc53763854e5376eea07409e590c990eafc0869d74"}
+curl --data '{"jsonrpc":"2.0","method": "eth_sendTransaction", "params": [{"from": "0xeb85a5557e5bdc18ee1934a89d8bb402398ee26a", "to": "0x6ff93b4b46b41c0c3c9baee01c255d3b4675963d", "data": "0xc6888fa10000000000000000000000000000000000000000000000000000000000000006"}], "id": 8}' -H "Content-Type: application/json" localhost:8545
+{"id":8,"jsonrpc":"2.0","result":"0x759cf065cbc22e9d779748dc53763854e5376eea07409e590c990eafc0869d74"}
 ```
 
 Since a transaction was sent, a transaction hash was returned. Retrieving the receipt gives:
 
 ```
-1{2   blockHash: "0xbf0a347307b8c63dd8c1d3d7cbdc0b463e6e7c9bf0a35be40393588242f01d55",3   blockNumber: 268,4   contractAddress: null,5   cumulativeGasUsed: 22631,6   gasUsed: 22631,7   logs: [{8      address: "0x6ff93b4b46b41c0c3c9baee01c255d3b4675963d",9      blockHash: "0xbf0a347307b8c63dd8c1d3d7cbdc0b463e6e7c9bf0a35be40393588242f01d55",10      blockNumber: 268,11      data: "0x000000000000000000000000000000000000000000000000000000000000002a",12      logIndex: 0,13      topics: ["0x24abdb5865df5079dcc5ac590ff6f01d5c16edbc5fab4e195d9febd1114503da"],14      transactionHash: "0x759cf065cbc22e9d779748dc53763854e5376eea07409e590c990eafc0869d74",15      transactionIndex: 016  }],17  transactionHash: "0x759cf065cbc22e9d779748dc53763854e5376eea07409e590c990eafc0869d74",18  transactionIndex: 019}20
-Show all
+{
+   blockHash: "0xbf0a347307b8c63dd8c1d3d7cbdc0b463e6e7c9bf0a35be40393588242f01d55",
+   blockNumber: 268,
+   contractAddress: null,
+   cumulativeGasUsed: 22631,
+   gasUsed: 22631,
+   logs: [{
+      address: "0x6ff93b4b46b41c0c3c9baee01c255d3b4675963d",
+      blockHash: "0xbf0a347307b8c63dd8c1d3d7cbdc0b463e6e7c9bf0a35be40393588242f01d55",
+      blockNumber: 268,
+      data: "0x000000000000000000000000000000000000000000000000000000000000002a",
+      logIndex: 0,
+      topics: ["0x24abdb5865df5079dcc5ac590ff6f01d5c16edbc5fab4e195d9febd1114503da"],
+      transactionHash: "0x759cf065cbc22e9d779748dc53763854e5376eea07409e590c990eafc0869d74",
+      transactionIndex: 0
+  }],
+  transactionHash: "0x759cf065cbc22e9d779748dc53763854e5376eea07409e590c990eafc0869d74",
+  transactionIndex: 0
+}
 ```
 
 The receipt contains a log. This log was generated by the EVM on transaction execution and included in the receipt. The `multiply` function shows that the `Print` event was raised with the input times 7. Since the argument for the `Print` event was a uint256 we can decode it according to the ABI rules which will leave us with the expected decimal 42. Apart from the data it is worth noting that topics can be used to determine which event created the log:
 
 ```
-1web3.sha3("Print(uint256)")2// "24abdb5865df5079dcc5ac590ff6f01d5c16edbc5fab4e195d9febd1114503da"3
+web3.sha3("Print(uint256)")
+// "24abdb5865df5079dcc5ac590ff6f01d5c16edbc5fab4e195d9febd1114503da"
 ```
 
 This was just a brief introduction into some of the most common tasks, demonstrating direct usage of the JSON-RPC.
