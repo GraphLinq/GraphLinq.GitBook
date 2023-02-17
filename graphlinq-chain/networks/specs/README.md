@@ -2,7 +2,7 @@
 
 ## General Information
 
-| Property           | Details         |
+| Property           |                 |
 | ------------------ | --------------- |
 | Block Time         | 15 seconds      |
 | Consensus          | PoA (clique)    |

@@ -9,6 +9,8 @@ Make sure that your Ledger device is connected to your computer or mobile device
 5. Go back to the main Ethereum app window and click on the "+" icon in the top right corner.
 6. Select "Add custom chain" and fill in the information as follows:
 
+****
+
 **Network Name**: GraphLinq Chain
 
 **New RPC URL**: https://glq-dataseed.graphlinq.io/
