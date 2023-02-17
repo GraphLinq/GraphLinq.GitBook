@@ -11,6 +11,7 @@
   * [GraphLinq Chain (Mainnet)](graphlinq-chain/networks/graphlinq-chain-mainnet/README.md)
     * [Wallet](graphlinq-chain/networks/graphlinq-chain-mainnet/wallet/README.md)
       * [Add GraphLinq Chain to Metamask](graphlinq-chain/networks/graphlinq-chain-mainnet/wallet/add-graphlinq-chain-to-metamask.md)
+      * [Add GraphLinq Chain To Ledger](graphlinq-chain/networks/graphlinq-chain-mainnet/wallet/add-graphlinq-chain-to-ledger.md)
     * [RPC Public Nodes](graphlinq-chain/networks/graphlinq-chain-mainnet/rpc-public-nodes.md)
     * [Json-RPC API](graphlinq-chain/networks/graphlinq-chain-mainnet/json-rpc-api.md)
     * [Libraries](graphlinq-chain/networks/graphlinq-chain-mainnet/libraries.md)
