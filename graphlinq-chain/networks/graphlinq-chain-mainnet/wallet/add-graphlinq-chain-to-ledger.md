@@ -19,7 +19,7 @@ Make sure that your Ledger device is connected to your computer or mobile device
 
 **Currency Symbol**: GLQ
 
-**Block Explorer URL (optional):** https://explorer.graphlinq.io/
+**Block Explorer URL:** https://explorer.graphlinq.io/
 
 
 
