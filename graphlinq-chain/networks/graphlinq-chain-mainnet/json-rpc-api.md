@@ -143,8 +143,8 @@ None
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":67}'3// Result4{5  "id":67,6  "jsonrpc":"2.0",7  "result": "Mist/v0.9.3/darwin/go1.4.1"8}9
- Copy
+2curl -X POST --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":67}'3// Result4{5  "id":67,6  "jsonrpc":"2.0",7  "result": "Mist/v0.9.3/darwin/go1.4.1"8}9
+
 ```
 
 #### web3\_sha3 <a href="#web3_sha3" id="web3_sha3"></a>
@@ -167,8 +167,8 @@ Returns Keccak-256 (_not_ the standardized SHA3-256) of the given data.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"web3_sha3","params":["0x68656c6c6f20776f726c64"],"id":64}'3// Result4{5  "id":64,6  "jsonrpc": "2.0",7  "result": "0x47173285a8d7341e5e972fc677286384f802f8ef42a5ec5f03bbfa254cb01fad"8}9
- Copy
+2curl -X POST --data '{"jsonrpc":"2.0","method":"web3_sha3","params":["0x68656c6c6f20776f726c64"],"id":64}'3// Result4{5  "id":64,6  "jsonrpc": "2.0",7  "result": "0x47173285a8d7341e5e972fc677286384f802f8ef42a5ec5f03bbfa254cb01fad"8}9
+
 ```
 
 #### net\_version <a href="#net_version" id="net_version"></a>
@@ -188,11 +188,9 @@ The full list of current network IDs is available at [chainlist.org](https://cha
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":67}'3// Result4{5  "id":67,6  "jsonrpc": "2.0",7  "result": "3"8}9
- Copy
+2curl -X POST --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":67}'3// Result4{5  "id":67,6  "jsonrpc": "2.0",7  "result": "3"8}9
+ net_listening
 ```
-
-#### net\_listening <a href="#net_listening" id="net_listening"></a>
 
 Returns `true` if client is actively listening for network connections.
 
@@ -207,8 +205,7 @@ None
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"net_listening","params":[],"id":67}'3// Result4{5  "id":67,6  "jsonrpc":"2.0",7  "result":true8}9
- Copy
+2curl -X POST --data '{"jsonrpc":"2.0","method":"net_listening","params":[],"id":67}'3// Result4{5  "id":67,6  "jsonrpc":"2.0",7  "result":true8}9
 ```
 
 #### net\_peerCount <a href="#net_peercount" id="net_peercount"></a>
@@ -226,8 +223,7 @@ None
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"net_peerCount","params":[],"id":74}'3// Result4{5  "id":74,6  "jsonrpc": "2.0",7  "result": "0x2" // 28}9
- Copy
+2curl -X POST --data '{"jsonrpc":"2.0","method":"net_peerCount","params":[],"id":74}'3// Result4{5  "id":74,6  "jsonrpc": "2.0",7  "result": "0x2" // 28}9
 ```
 
 #### eth\_protocolVersion <a href="#eth_protocolversion" id="eth_protocolversion"></a>
@@ -245,8 +241,7 @@ None
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_protocolVersion","params":[],"id":67}'3// Result4{5  "id":67,6  "jsonrpc": "2.0",7  "result": "54"8}9
- Copy
+2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_protocolVersion","params":[],"id":67}'3// Result4{5  "id":67,6  "jsonrpc": "2.0",7  "result": "54"8}9
 ```
 
 #### eth\_syncing <a href="#eth_syncing" id="eth_syncing"></a>
@@ -268,8 +263,7 @@ None
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": {8    startingBlock: '0x384',9    currentBlock: '0x386',10    highestBlock: '0x454'11  }12}13// Or when not syncing14{15  "id":1,16  "jsonrpc": "2.0",17  "result": false18}19
-Show all Copy
+2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": {8    startingBlock: '0x384',9    currentBlock: '0x386',10    highestBlock: '0x454'11  }12}13// Or when not syncing14{15  "id":1,16  "jsonrpc": "2.0",17  "result": false18}19
 ```
 
 #### eth\_coinbase <a href="#eth_coinbase" id="eth_coinbase"></a>
@@ -287,8 +281,7 @@ None
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_coinbase","params":[],"id":64}'3// Result4{5  "id":64,6  "jsonrpc": "2.0",7  "result": "0x407d73d8a49eeb85d32cf465507dd71d507100c1"8}9
- Copy
+2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_coinbase","params":[],"id":64}'3// Result4{5  "id":64,6  "jsonrpc": "2.0",7  "result": "0x407d73d8a49eeb85d32cf465507dd71d507100c1"8}9
 ```
 
 #### eth\_mining <a href="#eth_mining" id="eth_mining"></a>
@@ -306,8 +299,7 @@ None
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_mining","params":[],"id":71}'3//4{5  "id":71,6  "jsonrpc": "2.0",7  "result": true8}9
- Copy
+2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_mining","params":[],"id":71}'3//4{5  "id":71,6  "jsonrpc": "2.0",7  "result": true8}9
 ```
 
 #### eth\_hashrate <a href="#eth_hashrate" id="eth_hashrate"></a>
@@ -325,8 +317,7 @@ None
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_hashrate","params":[],"id":71}'3// Result4{5  "id":71,6  "jsonrpc": "2.0",7  "result": "0x38a"8}9
- Copy
+2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_hashrate","params":[],"id":71}'3// Result4{5  "id":71,6  "jsonrpc": "2.0",7  "result": "0x38a"8}9
 ```
 
 #### eth\_gasPrice <a href="#eth_gasprice" id="eth_gasprice"></a>
@@ -344,8 +335,7 @@ None
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_gasPrice","params":[],"id":73}'3// Result4{5  "id":73,6  "jsonrpc": "2.0",7  "result": "0x1dfd14000" // 8049999872 Wei8}9
- Copy
+2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_gasPrice","params":[],"id":73}'3// Result4{5  "id":73,6  "jsonrpc": "2.0",7  "result": "0x1dfd14000" // 8049999872 Wei8}9
 ```
 
 #### eth\_accounts <a href="#eth_accounts" id="eth_accounts"></a>
@@ -363,8 +353,7 @@ None
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_accounts","params":[],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": ["0x407d73d8a49eeb85d32cf465507dd71d507100c1"]8}9
- Copy
+2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_accounts","params":[],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": ["0x407d73d8a49eeb85d32cf465507dd71d507100c1"]8}9
 ```
 
 #### eth\_blockNumber <a href="#eth_blocknumber" id="eth_blocknumber"></a>
@@ -382,8 +371,7 @@ None
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":83}'3// Result4{5  "id":83,6  "jsonrpc": "2.0",7  "result": "0x4b7" // 12078}9
- Copy
+2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":83}'3// Result4{5  "id":83,6  "jsonrpc": "2.0",7  "result": "0x4b7" // 12078}9
 ```
 
 #### eth\_getBalance <a href="#eth_getbalance" id="eth_getbalance"></a>
@@ -407,11 +395,9 @@ Returns the balance of the account of given address.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBalance","params":["0x407d73d8a49eeb85d32cf465507dd71d507100c1", "latest"],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": "0x0234c8a3397aab58" // 1589724902343750008}9
- Copy
+2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBalance","params":["0x407d73d8a49eeb85d32cf465507dd71d507100c1", "latest"],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": "0x0234c8a3397aab58" // 1589724902343750008}9
+eth_getStorageAt
 ```
-
-#### eth\_getStorageAt <a href="#eth_getstorageat" id="eth_getstorageat"></a>
 
 Returns the value from a storage position at a given address.
 
@@ -487,8 +473,7 @@ Returns the number of transactions _sent_ from an address.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionCount","params":["0x407d73d8a49eeb85d32cf465507dd71d507100c1","latest"],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": "0x1" // 18}9
- Copy
+2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionCount","params":["0x407d73d8a49eeb85d32cf465507dd71d507100c1","latest"],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": "0x1" // 18}9
 ```
 
 #### eth\_getBlockTransactionCountByHash <a href="#eth_getblocktransactioncountbyhash" id="eth_getblocktransactioncountbyhash"></a>
@@ -511,8 +496,7 @@ Returns the number of transactions in a block from a block matching the given bl
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBlockTransactionCountByHash","params":["0xb903239f8543d04b5dc1ba6579132b143087c68db1b2168786408fcbce568238"],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": "0xb" // 118}9
- Copy
+2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBlockTransactionCountByHash","params":["0xb903239f8543d04b5dc1ba6579132b143087c68db1b2168786408fcbce568238"],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": "0xb" // 118}9
 ```
 
 #### eth\_getBlockTransactionCountByNumber <a href="#eth_getblocktransactioncountbynumber" id="eth_getblocktransactioncountbynumber"></a>
@@ -535,8 +519,7 @@ Returns the number of transactions in a block matching the given block number.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBlockTransactionCountByNumber","params":["0xe8"],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": "0xa" // 108}9
- Copy
+2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBlockTransactionCountByNumber","params":["0xe8"],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": "0xa" // 108}9
 ```
 
 #### eth\_getUncleCountByBlockHash <a href="#eth_getunclecountbyblockhash" id="eth_getunclecountbyblockhash"></a>
@@ -559,8 +542,7 @@ Returns the number of uncles in a block from a block matching the given block ha
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getUncleCountByBlockHash","params":["0xb903239f8543d04b5dc1ba6579132b143087c68db1b2168786408fcbce568238"],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": "0x1" // 18}9
- Copy
+2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getUncleCountByBlockHash","params":["0xb903239f8543d04b5dc1ba6579132b143087c68db1b2168786408fcbce568238"],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": "0x1" // 18}9
 ```
 
 #### eth\_getUncleCountByBlockNumber <a href="#eth_getunclecountbyblocknumber" id="eth_getunclecountbyblocknumber"></a>
@@ -583,8 +565,7 @@ Returns the number of uncles in a block from a block matching the given block nu
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getUncleCountByBlockNumber","params":["0xe8"],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": "0x1" // 18}9
- Copy
+2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getUncleCountByBlockNumber","params":["0xe8"],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": "0x1" // 18}9
 ```
 
 #### eth\_getCode <a href="#eth_getcode" id="eth_getcode"></a>
@@ -608,8 +589,7 @@ Returns code at a given address.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getCode","params":["0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b", "0x2"],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": "0x600160008035811a818181146012578301005b601b6001356025565b8060005260206000f25b600060078202905091905056"8}9
- Copy
+2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getCode","params":["0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b", "0x2"],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": "0x600160008035811a818181146012578301005b601b6001356025565b8060005260206000f25b600060078202905091905056"8}9
 ```
 
 #### eth\_sign <a href="#eth_sign" id="eth_sign"></a>
@@ -632,8 +612,7 @@ Note: the address to sign with must be unlocked.
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_sign","params":["0x9b2055d370f73ec7d8a03e965129118dc8f5bf83", "0xdeadbeaf"],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": "0xa3f20717a250c2b0b729b7e5becbff67fdaef7e0699da4de7ca5895b02a170a12d887fd3b17bfdce3481f10bea41f45ba9f709d39ce8325427b57afcfc994cee1b"8}9
- Copy
+2curl -X POST --data '{"jsonrpc":"2.0","method":"eth_sign","params":["0x9b2055d370f73ec7d8a03e965129118dc8f5bf83", "0xdeadbeaf"],"id":1}'3// Result4{5  "id":1,6  "jsonrpc": "2.0",7  "result": "0xa3f20717a250c2b0b729b7e5becbff67fdaef7e0699da4de7ca5895b02a170a12d887fd3b17bfdce3481f10bea41f45ba9f709d39ce8325427b57afcfc994cee1b"8}9
 ```
 
 #### eth\_signTransaction <a href="#eth_signtransaction" id="eth_signtransaction"></a>
@@ -659,8 +638,7 @@ Signs a transaction that can be submitted to the network at a later time using w
 **Example**
 
 ```
-1// Request2curl -X POST --data '{"id": 1,"jsonrpc": "2.0","method": "eth_signTransaction","params": [{"data":"0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675","from": "0xb60e8dd61c5d32be8058bb8eb970870f07233155","gas": "0x76c0","gasPrice": "0x9184e72a000","to": "0xd46e8dd67c5d32be8058bb8eb970870f07244567","value": "0x9184e72a"}]}'3// Result4{5    "id": 1,6    "jsonrpc": "2.0",7    "result": "0xa3f20717a250c2b0b729b7e5becbff67fdaef7e0699da4de7ca5895b02a170a12d887fd3b17bfdce3481f10bea41f45ba9f709d39ce8325427b57afcfc994cee1b"8}9
- Copy
+2curl -X POST --data '{"id": 1,"jsonrpc": "2.0","method": "eth_signTransaction","params": [{"data":"0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675","from": "0xb60e8dd61c5d32be8058bb8eb970870f07233155","gas": "0x76c0","gasPrice": "0x9184e72a000","to": "0xd46e8dd67c5d32be8058bb8eb970870f07244567","value": "0x9184e72a"}]}'3// Result4{5    "id": 1,6    "jsonrpc": "2.0",7    "result": "0xa3f20717a250c2b0b729b7e5becbff67fdaef7e0699da4de7ca5895b02a170a12d887fd3b17bfdce3481f10bea41f45ba9f709d39ce8325427b57afcfc994cee1b"8}9
 ```
 
 #### eth\_sendTransaction <a href="#eth_sendtransaction" id="eth_sendtransaction"></a>
