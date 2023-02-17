@@ -16,7 +16,7 @@
     * [Status](graphlinq-chain/networks/graphlinq-chain-mainnet/status.md)
 * [GLQ](graphlinq-chain/glq/README.md)
   * [Allocation](graphlinq-chain/glq/allocation.md)
-  * [Bridge (Live Soon)](graphlinq-chain/glq/bridge-live-soon.md)
+  * [Bridge](graphlinq-chain/glq/bridge.md)
   * [Rewards](graphlinq-chain/glq/rewards.md)
 
 ## Dev tooling
@@ -104,4 +104,4 @@
 * [Medium](https://medium.com/@Graphlinq)
 * [Github](https://github.com/graphlinq)
 * [GraphLinq Explorer](https://explorer.graphlinq.io)
-* [Audit Report](https://graphlinq.io/)
+* [Audit Report](https://github.com/solidproof/projects/tree/main/GraphLinq)

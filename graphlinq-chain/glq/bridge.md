@@ -1,4 +1,4 @@
-# Bridge (Live Soon)
+# Bridge
 
 Head over to [app.graphlinq.io/app/bridge](https://app.graphlinq.io/app/bridge) once its live to bridge your GLQ from Ethereum Network to GraphLinq Chain.&#x20;
 
@@ -6,8 +6,9 @@ Head over to [app.graphlinq.io/app/bridge](https://app.graphlinq.io/app/bridge) 
 
 1. Connect to GraphLinq App on Ethereum Mainnet
 2. Make sure you are on the Bridge page or go to Bridge page
+3. Click on "Bridge in my GLQ"&#x20;
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-02-09 at 7.48.14 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-02-17 at 2.38.01 PM.png" alt=""><figcaption></figcaption></figure>
 
 3. Enter the amount of GLQ you would like to move to GraphLinq Chain
 4. Click on "Deposit GLQ from ETH Network"
@@ -26,6 +27,6 @@ Head over to [app.graphlinq.io/app/bridge](https://app.graphlinq.io/app/bridge) 
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-02-09 at 8.02.43 PM.png" alt=""><figcaption></figcaption></figure>
 
-Your bridge is completed successfully.
+Your bridge is completed successfully. You can follow the steps&#x20;
 
-**Note:** The minimum required GLQ for paying gas fees for doing the first transaction on the mainnet for claiming GLQ has been airdropped to all GLQ holders on Ethereum's addresses on the new GraphLinq Chain. &#x20;
+**Note:** The minimum required GLQ for paying gas fees for doing the first transaction on the mainnet (for claiming bridged GLQ) has been airdropped to all (Erc20 GLQ)holders on the new GraphLinq Chain. &#x20;
