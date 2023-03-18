@@ -60,7 +60,7 @@
     * [Set variable](dev-tooling/blocks/base-variable/set-variable.md)
     * [Variable Portal](dev-tooling/blocks/base-variable/variable-portal.md)
     * [Secret String](dev-tooling/blocks/base-variable/secret-string.md)
-  * [Common](dev-tooling/blocks/common/README.md)
+  * [Common](dev-tooling/blocks/common.md)
     * [Entry Point](dev-tooling/blocks/common/entry-point.md)
     * [On Graph Start](dev-tooling/blocks/common/on-graph-start.md)
     * [Stop Graph](dev-tooling/blocks/common/stop-graph.md)
