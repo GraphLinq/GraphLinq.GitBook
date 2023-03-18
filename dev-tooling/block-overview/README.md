@@ -2,12 +2,12 @@
 
 A node or block is a point in a network or diagram at which lines or pathways intersect.
 
-Each blocks type have a different use, you can link them to each other to create a powerful graph and automate your tasks.
+Each block's type have a different use, you can link them to each other to create a powerful graph and automate your tasks.
 
 It contains a set of instructions pre-scripted that you can use automatically, here is a sample of node that get a pair price on Uniswap using the graph API named as `GetUniswapPairPriceNode`:
 
-{% code overflow="wrap" %}
-```
+{% code overflow="wrap" lineNumbers="true" %}
+```clike
  [NodeDefinition("GetUniswapPairPriceNode", "Uniswap Get Pair Price", NodeTypeEnum.Function, "Uniswap")]
     public class GetUniswapPairPriceNode : Node
     {
