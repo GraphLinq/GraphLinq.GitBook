@@ -2,20 +2,11 @@
 
 The function Type is the node type that perform a specific task: it execute a fixed action (set of multiple instructions) inside your graph.
 
-Current deployed function list over the Engine network:\
-
-
-| Block Category | Block Type                           | Description                                      | Block Gas Cost |
-| -------------- | ------------------------------------ | ------------------------------------------------ | -------------- |
-| HTTP           | NodeBlock.Engine.Nodes.FetchHTTPNode | Make an HTTP GET request to any requested server | 0              |
-|                |                                      |                                                  |                |
-|                |                                      |                                                  |                |
-
-
+Current deployed function list over the Engine network:
 
 {% code overflow="wrap" %}
 ```
-    "Block Type" -> "NodeBlock.Engine.Nodes.FetchHTTPNode""Description" -> "Make an HTTP GET request to any requested server
+"Block Type" -> "NodeBlock.Engine.Nodes.FetchHTTPNode""Description" -> "Make an HTTP GET request to any requested server""Block Gas Cost -> 0
 ```
 {% endcode %}
 
