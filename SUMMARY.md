@@ -60,6 +60,7 @@
     * [Set variable](dev-tooling/blocks/base-variable/set-variable.md)
     * [Variable Portal](dev-tooling/blocks/base-variable/variable-portal.md)
     * [Secret String](dev-tooling/blocks/base-variable/secret-string.md)
+  * [Common](dev-tooling/blocks/common.md)
   * [Base Condition](dev-tooling/blocks/base-condition/README.md)
     * [Decimal Branch](dev-tooling/blocks/base-condition/decimal-branch.md)
     * [Integer Branch](dev-tooling/blocks/base-condition/integer-branch.md)
