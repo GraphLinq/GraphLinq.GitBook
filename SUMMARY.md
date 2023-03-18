@@ -52,6 +52,7 @@
     * [Boolean](dev-tooling/blocks/base-variable/boolean.md)
     * [Decimal](dev-tooling/blocks/base-variable/decimal.md)
     * [Integer](dev-tooling/blocks/base-variable/integer.md)
+    * [KeyValue](dev-tooling/blocks/base-variable/keyvalue.md)
     * [Long](dev-tooling/blocks/base-variable/long.md)
     * [String](dev-tooling/blocks/base-variable/string.md)
     * [Get variable](dev-tooling/blocks/base-variable/get-variable.md)
