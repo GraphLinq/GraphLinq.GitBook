@@ -124,7 +124,7 @@
 
 ## Nocode Users
 
-* [Instant Wizard App](nocode-users/instant-wizard-app.md)
+* [Instant Deploy Wizard](nocode-users/instant-deploy-wizard.md)
 * [GraphLinq Marketplace](nocode-users/graphlinq-marketplace.md)
 
 ***
