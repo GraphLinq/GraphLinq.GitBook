@@ -1,6 +1,6 @@
 # Explorer
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2023-02-13 at 2.57.48 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2023-03-27 at 12.31.37 AM.png" alt=""><figcaption></figcaption></figure>
 
 The GraphLinq Blockchain Explorer, located at [explorer.graphlinq.io](https://explorer.graphlinq.io), is a comprehensive platform for monitoring and exploring the GraphLinq blockchain. It provides a user-friendly interface that allows users to view information about the network and its underlying transactions, smart contracts, and other data structures.
 
