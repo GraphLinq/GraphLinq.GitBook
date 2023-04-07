@@ -4,7 +4,7 @@ To create a new graph, you can use our [IDE](https://www.codecademy.com/articles
 
 Once you're on the IDE, click on `File` on the top menu to create your first graph ->
 
-![](<../../.gitbook/assets/image (2).png>)
+![](<../../.gitbook/assets/image (2) (1).png>)
 
 Wait for the message `Initialize new empty graph` appearing in the console, then you can start to add a new block over the graph canvas ( the right side )
 

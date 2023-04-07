@@ -127,6 +127,10 @@
 * [Instant Deploy Wizard](nocode-users/instant-deploy-wizard.md)
 * [GraphLinq Marketplace](nocode-users/graphlinq-marketplace.md)
 
+## 🎶 Run a node
+
+* [Installation](run-a-node/installation.md)
+
 ***
 
 * [Twitter](https://twitter.com/graphlinq\_proto)
