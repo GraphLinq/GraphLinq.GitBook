@@ -23,6 +23,10 @@
   * [Bridge](graphlinq-chain/glq/bridge.md)
   * [Rewards](graphlinq-chain/glq/rewards.md)
 
+## 🎶 Run a node
+
+* [Installation](run-a-node/installation.md)
+
 ## Dev tooling
 
 * [Introduction](dev-tooling/introduction/README.md)
@@ -126,10 +130,6 @@
 
 * [Instant Deploy Wizard](nocode-users/instant-deploy-wizard.md)
 * [GraphLinq Marketplace](nocode-users/graphlinq-marketplace.md)
-
-## 🎶 Run a node
-
-* [Installation](run-a-node/installation.md)
 
 ***
 

@@ -4,7 +4,7 @@ To create a new graph, you can use our [IDE](https://www.codecademy.com/articles
 
 Once you're on the IDE, click on `File` on the top menu to create your first graph ->
 
-![](<../../.gitbook/assets/image (2) (1).png>)
+![](<../../.gitbook/assets/image (2).png>)
 
 Wait for the message `Initialize new empty graph` appearing in the console, then you can start to add a new block over the graph canvas ( the right side )
 
@@ -28,7 +28,7 @@ The blank dot represent the link of parameters between node, for example on the 
 
 Now we will add a bit of logic, let's say that we want to monitor every new transactions coming on the Ethereum blockchain and print in hash value, here is how we will do it ->
 
-![](<../../.gitbook/assets/image (3).png>)
+![](<../../.gitbook/assets/image (3) (1).png>)
 
 The yellow link represent the path of cycle execution that will follow up the engine while running your graph. You can now use "Export as file" to generate a .GLQ file up and ready to be executed over the protocol.
 

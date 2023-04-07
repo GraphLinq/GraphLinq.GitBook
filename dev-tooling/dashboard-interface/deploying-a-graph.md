@@ -2,7 +2,7 @@
 
 Once you're logged on the dashboard interface, you can select the "New Graph" Button over the Graph page that you can select on the Menu.
 
-![](<../../.gitbook/assets/image (1).png>)
+![](<../../.gitbook/assets/image (1) (2).png>)
 
 You then have to choose between modifying a template pre-made or directly importing a .GLQ file that you created on the IDE.
 

@@ -1,7 +1,5 @@
 # Installation
 
-### Installation
-
 **`docker pull graphlinqchain/docker-glq-nodemanager:v0.0.3`**
 
 **`docker run -d -p 8080:8080 -p 8545:8545 -p 30310:30310 -p 30311:30311 graphlinqchain/docker-glq-nodemanager:v0.0.3`**
@@ -10,7 +8,7 @@
 
 To begin setting up your Graphlinq node, navigate to http(s)://ip:8080/status. Here, you'll be prompted to set an access password to secure the node management. It's important to choose a strong password of at least 15 characters to ensure maximum security. Once you've entered your chosen password, you'll be taken to the setup page to continue the process.
 
-<figure><img src="../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Please setup a big password \~15characters minimum.
@@ -22,11 +20,11 @@ Please setup a big password \~15characters minimum.
 
 In the Node Setup section, you will need to provide a keystore or the secret of a wallet, and define a strong password to create a keystore. This step is crucial to protect your node from any potential risks. You can refer to the image provided for guidance.
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 After providing the necessary information, simply click on the "Fire" button to launch your node.
 
-<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 ### 3. Add Peers
 
