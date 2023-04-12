@@ -134,8 +134,20 @@
     * [Send Discord Channel Message](dev-tooling/blocks/discord/send-discord-channel-message.md)
     * [Discord Connector](dev-tooling/blocks/discord/discord-connector.md)
     * [On Discord Private Message](dev-tooling/blocks/discord/on-discord-private-message.md)
-* [Blocks (Messaging)](dev-tooling/blocks-messaging.md)
+* [Blocks (Messaging)](dev-tooling/blocks-messaging/README.md)
+  * [Twitter](dev-tooling/blocks-messaging/twitter.md)
+  * [Twitch](dev-tooling/blocks-messaging/twitch.md)
+  * [Telegram](dev-tooling/blocks-messaging/telegram.md)
+  * [SMTP](dev-tooling/blocks-messaging/smtp.md)
+  * [ShortenURL](dev-tooling/blocks-messaging/shortenurl.md)
+  * [PushOver](dev-tooling/blocks-messaging/pushover.md)
+  * [PushBullet](dev-tooling/blocks-messaging/pushbullet.md)
+  * [OpenAI](dev-tooling/blocks-messaging/openai.md)
+  * [Discord](dev-tooling/blocks-messaging/discord.md)
 * [Blocks (Exchange)](dev-tooling/blocks-exchange.md)
+* [Blocks (Blockchains)](dev-tooling/blocks-blockchains.md)
+* [Blocks (Charting)](dev-tooling/blocks-charting.md)
+* [Blocks (Machine Learning)](dev-tooling/blocks-machine-learning.md)
 
 ## Nocode Users
 
