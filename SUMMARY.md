@@ -90,6 +90,7 @@
     * [Serialize to JSON](dev-tooling/blocks/json/serialize-to-json.md)
   * [Log](dev-tooling/blocks/log/README.md)
     * [Print](dev-tooling/blocks/log/print.md)
+  * [WebSocket](dev-tooling/blocks/websocket.md)
   * [String](dev-tooling/blocks/string/README.md)
     * [String Contains](dev-tooling/blocks/string/string-contains.md)
     * [Concat String](dev-tooling/blocks/string/concat-string.md)
@@ -104,6 +105,11 @@
     * [Multiply A \* B](dev-tooling/blocks/math/multiply-a-b.md)
     * [Percentage Difference](dev-tooling/blocks/math/percentage-difference.md)
     * [Round](dev-tooling/blocks/math/round.md)
+  * [HTTP](dev-tooling/blocks/http.md)
+  * [Function](dev-tooling/blocks/function.md)
+  * [Transformers](dev-tooling/blocks/transformers.md)
+  * [Data](dev-tooling/blocks/data.md)
+  * [CSV](dev-tooling/blocks/csv.md)
   * [Base Condition](dev-tooling/blocks/base-condition/README.md)
     * [Decimal Branch](dev-tooling/blocks/base-condition/decimal-branch.md)
     * [Integer Branch](dev-tooling/blocks/base-condition/integer-branch.md)
@@ -111,6 +117,9 @@
     * [Boolean Branch](dev-tooling/blocks/base-condition/boolean-branch.md)
   * [Range Condition](dev-tooling/blocks/range-condition/README.md)
     * [Decimal Range Branch](dev-tooling/blocks/range-condition/decimal-range-branch.md)
+  * [Array](dev-tooling/blocks/array.md)
+  * [Dictionary](dev-tooling/blocks/dictionary.md)
+  * [Hosted API](dev-tooling/blocks/hosted-api.md)
   * [CoinGecko](dev-tooling/blocks/coingecko/README.md)
     * [Get CoinGecko Coin](dev-tooling/blocks/coingecko/get-coingecko-coin.md)
   * [Discord](dev-tooling/blocks/discord/README.md)
@@ -125,6 +134,8 @@
     * [Send Discord Channel Message](dev-tooling/blocks/discord/send-discord-channel-message.md)
     * [Discord Connector](dev-tooling/blocks/discord/discord-connector.md)
     * [On Discord Private Message](dev-tooling/blocks/discord/on-discord-private-message.md)
+* [Blocks (Messaging)](dev-tooling/blocks-messaging.md)
+* [Blocks (Exchange)](dev-tooling/blocks-exchange.md)
 
 ## Nocode Users
 
