@@ -12,4 +12,4 @@ In the following example, we have set up our Discord connection with an account 
 
 Note that the "Author" output of the `On Discord Private Message` block is plugged into the `Reply Private Discord Message` block to indicate that the reply should be made to the same user that sent the original private message.
 
-In this example, our automated response is customized to include the username of the Discord user who sent the original private message. We achieve this by constructing our message with a [`Replace String In String`](../string/replace-string-in-string.md) block, and feeding the "From" output of our `On Discord Private Message` block into the "ReplaceText" input of the `Replace String In String` block.
+In this example, our automated response is customized to include the username of the Discord user who sent the original private message. We achieve this by constructing our message with a [`Replace String In String`](../../blocks/string/replace-string-in-string.md) block, and feeding the "From" output of our `On Discord Private Message` block into the "ReplaceText" input of the `Replace String In String` block.
