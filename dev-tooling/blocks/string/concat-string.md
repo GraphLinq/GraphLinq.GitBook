@@ -4,7 +4,7 @@
 
 <figure><img src="https://i.imgur.com/DQnDLC5.png" alt=""><figcaption></figcaption></figure>
 
-In the above example, we are looking up the price of Bitcoin on CoinGecko. Then, we are using a `Concat String` block to combine the string "Bitcoin price:" with whatever price is output by the [`Get CoinGecko Coin`](../coingecko/get-coingecko-coin.md) block. The resulting concatenated string is then passed to the [`Print`](../log/print.md) block as a single string, where it is printed to the logs looking something like:
+In the above example, we are looking up the price of Bitcoin on CoinGecko. Then, we are using a `Concat String` block to combine the string "Bitcoin price:" with whatever price is output by the [`Get CoinGecko Coin`](../../blocks-exchange/coingecko/get-coingecko-coin.md) block. The resulting concatenated string is then passed to the [`Print`](../log/print.md) block as a single string, where it is printed to the logs looking something like:
 
 <figure><img src="https://i.imgur.com/5WOMkUO.png" alt=""><figcaption></figcaption></figure>
 

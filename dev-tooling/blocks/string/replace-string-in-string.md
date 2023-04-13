@@ -10,7 +10,7 @@ This produces:&#x20;
 
 <figure><img src="https://i.imgur.com/OaRaiwY.png" alt=""><figcaption></figcaption></figure>
 
-In the example above, we use the string "{0}" as a sort of placeholder in our original string. We then search for "{0}" using our `Replace String in String` block, and replace that string with whatever price is returned by the[ `Get CoinGecko Coin`](../coingecko/get-coingecko-coin.md) block.
+In the example above, we use the string "{0}" as a sort of placeholder in our original string. We then search for "{0}" using our `Replace String in String` block, and replace that string with whatever price is returned by the[ `Get CoinGecko Coin`](../../blocks-exchange/coingecko/get-coingecko-coin.md) block.
 
 We could have used any string for our placeholder here; we used "{0}" because it is conventional. Note that if more than one instance of "{0}" (or whatever your "ToReplace" string is) exists in the original string, they will all be replaced with the "ReplaceText" string. Also note that we are allowed to put integer or decimal type data in the "ReplaceText" input parameter, as we do above with Bitcoin's price. The numeric data will be converted to string data behind the scenes before it is substituted into the original string. Below is an example of chaining several `Replace String in String` blocks to create an output message containing many pieces of data:
 

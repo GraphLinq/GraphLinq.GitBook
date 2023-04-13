@@ -10,7 +10,7 @@ As with all block types in the [`Math`](./) category, `Percentage Difference` bl
 
 In the example above, we use a `Percentage Difference` block to compare the market capitalizations of ETH and BTC in order to calculate what percentage ETH needs to gain before it flips BTC's market cap.
 
-When the graph starts, we use a sequence of two [`Get CoinGecko Coin`](../coingecko/get-coingecko-coin.md) blocks to retrieve the market capitalizations of ETH and BTC, and we then feed these market cap values into the `Percentage Difference` block. Note that we link up ETH as "A" and BTC as "B", which means that the output will be the percentage change Ether needs to undergo to reach Bitcoin's market cap, rather than the other way around.
+When the graph starts, we use a sequence of two [`Get CoinGecko Coin`](../../blocks-exchange/coingecko/get-coingecko-coin.md) blocks to retrieve the market capitalizations of ETH and BTC, and we then feed these market cap values into the `Percentage Difference` block. Note that we link up ETH as "A" and BTC as "B", which means that the output will be the percentage change Ether needs to undergo to reach Bitcoin's market cap, rather than the other way around.
 
 After calculating our percentage difference, we pass that value to a [`Round`](round.md) block in order to format it into a more displayable form, and then we pack it into a short message using a [`Replace String In String`](../string/replace-string-in-string.md) block. Finally, we record that message in the graph's logs using a [`Print`](../log/print.md) block.
 

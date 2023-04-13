@@ -12,7 +12,7 @@ In the following example, we use a `Decimal Range Branch` block to send a messag
 
 <figure><img src="https://i.imgur.com/M8IGfDy.png" alt=""><figcaption></figcaption></figure>
 
-The example above is driven by the `Timer` block, which fires every 60 seconds. When the `Timer` block fires, it triggers the [`Get CoinGecko Coin`](../coingecko/get-coingecko-coin.md) block, which retrieves the present price of ADA. This price is then passed to our `Decimal Range Branch` block, which compares it to the range $1.00 - $2.00.
+The example above is driven by the `Timer` block, which fires every 60 seconds. When the `Timer` block fires, it triggers the [`Get CoinGecko Coin`](../../blocks-exchange/coingecko/get-coingecko-coin.md) block, which retrieves the present price of ADA. This price is then passed to our `Decimal Range Branch` block, which compares it to the range $1.00 - $2.00.
 
 If the price is above the upper bound, then our Telegram bot will send the message "ADA has broken above $2.00!" to our Telegram channel using a `Send Telegram Message`block and a `Telegram Bot` block. If the price is below the lower bound, then our Telegram bot will send the message "ADA has fallen below $1.00!" to our Telegram channel.
 

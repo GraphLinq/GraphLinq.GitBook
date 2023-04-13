@@ -12,7 +12,7 @@ In the first part, we are listening to Telegram messages that are picked up by o
 
 <figure><img src="https://i.imgur.com/ZorTP01.png" alt=""><figcaption></figcaption></figure>
 
-In the second part of the example, we have a `Timer` block that fires every minute. Whenever it fires, we execute a `Boolean Branch` block. We use a [`Get variable`](../base-variable/get-variable.md) block to access the value of the variable called "priceNotificationsOn" (the same variable that Telegram users are able to set thanks to the first part of our example). If the value of "priceNotificationsOn" is "true", then the `Boolean Branch` will trigger the [`Get CoinGecko Coin`](../coingecko/get-coingecko-coin.md) block, and we will end up outputting the price of Bitcoin into the Telegram channel. Otherwise, nothing will happen, and we will reevaluate in 60 seconds when the `Timer` block fires again.\
+In the second part of the example, we have a `Timer` block that fires every minute. Whenever it fires, we execute a `Boolean Branch` block. We use a [`Get variable`](../base-variable/get-variable.md) block to access the value of the variable called "priceNotificationsOn" (the same variable that Telegram users are able to set thanks to the first part of our example). If the value of "priceNotificationsOn" is "true", then the `Boolean Branch` will trigger the [`Get CoinGecko Coin`](../../blocks-exchange/coingecko/get-coingecko-coin.md) block, and we will end up outputting the price of Bitcoin into the Telegram channel. Otherwise, nothing will happen, and we will reevaluate in 60 seconds when the `Timer` block fires again.\
 
 
 <figure><img src="https://i.imgur.com/2OUFxLQ.png" alt=""><figcaption></figcaption></figure>
