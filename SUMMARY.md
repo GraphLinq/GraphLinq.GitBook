@@ -147,6 +147,10 @@
 * [Blocks (Blockchains)](dev-tooling/blocks-blockchains.md)
 * [Blocks (Charting)](dev-tooling/blocks-charting.md)
 * [Blocks (Machine Learning)](dev-tooling/blocks-machine-learning.md)
+* [Node Connector Colors](dev-tooling/node-connector-colors/README.md)
+  * [Execution Logic (Yellow)](dev-tooling/node-connector-colors/execution-logic-yellow.md)
+* [Block Execution Order](dev-tooling/block-execution-order/README.md)
+  * [Additional Block Execution](dev-tooling/block-execution-order/additional-block-execution.md)
 
 ## Nocode Users
 
