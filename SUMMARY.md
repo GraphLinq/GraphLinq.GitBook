@@ -154,7 +154,8 @@
   * [Booleans (pink)](dev-tooling/node-connector-colors/booleans-pink.md)
 * [Block Execution Order](dev-tooling/block-execution-order/README.md)
   * [Additional Block Execution](dev-tooling/block-execution-order/additional-block-execution.md)
-* [Node Colors](dev-tooling/node-colors.md)
+* [Block Color](dev-tooling/block-color/README.md)
+  * [Colors & Meaning](dev-tooling/block-color/colors-and-meaning.md)
 
 ## Nocode Users
 
