@@ -148,9 +148,13 @@
 * [Blocks (Charting)](dev-tooling/blocks-charting.md)
 * [Blocks (Machine Learning)](dev-tooling/blocks-machine-learning.md)
 * [Node Connector Colors](dev-tooling/node-connector-colors/README.md)
+  * [Strings & Variables](dev-tooling/node-connector-colors/strings-and-variables.md)
   * [Execution Logic (Yellow)](dev-tooling/node-connector-colors/execution-logic-yellow.md)
+  * [Integers (orange)](dev-tooling/node-connector-colors/integers-orange.md)
+  * [Booleans (pink)](dev-tooling/node-connector-colors/booleans-pink.md)
 * [Block Execution Order](dev-tooling/block-execution-order/README.md)
   * [Additional Block Execution](dev-tooling/block-execution-order/additional-block-execution.md)
+* [Node Colors](dev-tooling/node-colors.md)
 
 ## Nocode Users
 
