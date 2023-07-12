@@ -1,0 +1,2 @@
+# Get Avascan Burned Fees
+
