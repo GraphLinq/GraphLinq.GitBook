@@ -4,11 +4,7 @@
 
 ## Summary
 
-| Network           | GraphLinq Chain |
-| ----------------- | --------------- |
-| Native (fee) coin | GLQ             |
-| Chain ID          | 614             |
-| Consensus         | PoA (Clique)    |
+<table><thead><tr><th width="195.5">Network</th><th>GraphLinq Chain</th></tr></thead><tbody><tr><td>Native (fee) coin</td><td>GLQ</td></tr><tr><td>Chain ID</td><td>614</td></tr><tr><td>Consensus</td><td>PoA (Clique)</td></tr></tbody></table>
 
 ## Parameters
 
