@@ -40,13 +40,6 @@
 * [Engine](dev-tooling/engine/README.md)
   * [Setting up the environment](dev-tooling/engine/setting-up-the-environment.md)
   * [Running an Engine locally](dev-tooling/engine/running-an-engine-locally.md)
-* [Block Overview](dev-tooling/block-overview/README.md)
-  * [Function Type](dev-tooling/block-overview/function-type.md)
-  * [Entry Point Type](dev-tooling/block-overview/entry-point-type.md)
-  * [Event Trigger Type](dev-tooling/block-overview/event-trigger-type.md)
-  * [Variable Type](dev-tooling/block-overview/variable-type.md)
-  * [Condition Type](dev-tooling/block-overview/condition-type.md)
-  * [Connector Type](dev-tooling/block-overview/connector-type.md)
 * [Dashboard Interface](dev-tooling/dashboard-interface/README.md)
   * [Importing Graph/Template](dev-tooling/dashboard-interface/importing-graph-template.md)
   * [Deploying a Graph](dev-tooling/dashboard-interface/deploying-a-graph.md)
@@ -248,6 +241,13 @@
   * [Additional Block Execution](dev-tooling/block-execution-order/additional-block-execution.md)
 * [Block Color](dev-tooling/block-color/README.md)
   * [Colors & Meaning](dev-tooling/block-color/colors-and-meaning.md)
+* [Block Type Overview](dev-tooling/block-type-overview/README.md)
+  * [Function Type](dev-tooling/block-type-overview/function-type.md)
+  * [Entry Point Type](dev-tooling/block-type-overview/entry-point-type.md)
+  * [Event Trigger Type](dev-tooling/block-type-overview/event-trigger-type.md)
+  * [Variable Type](dev-tooling/block-type-overview/variable-type.md)
+  * [Condition Type](dev-tooling/block-type-overview/condition-type.md)
+  * [Connector Type](dev-tooling/block-type-overview/connector-type.md)
 
 ## Nocode Users
 
