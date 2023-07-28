@@ -1,5 +1,23 @@
 # Integer Branch
 
+The Integer Branch blocks in the GraphLinq IDE are essential components for implementing conditional branching based on integer values. These blocks evaluate the input integer data and determine the appropriate path of execution within the graph based on the specified conditions.
+
+Similar to other branching blocks, the Integer Branch blocks have two main output paths: the True path and the False path. The decision on which path to follow depends on the evaluation of the condition set by the developer. If the condition evaluates to true, the graph will execute the nodes connected to the True output. If the condition evaluates to false, the nodes connected to the False output will be executed.
+
+To set the condition for the Integer Branch, developers can use various comparison operations, such as greater than (">"), less than ("<"), equal to ("=="), not equal to ("!="), greater than or equal to (">="), and less than or equal to ("<="). These operations allow for precise and flexible conditional checks based on the integer inputs.
+
+### Example
+
+In this example, we have an Integer Branch block that checks if the input integer value "quantity" is greater than 100. If the condition is true, the graph will execute the nodes connected to the True output, which might perform actions like sending a notification or triggering another process. If the condition is false, the graph will follow the nodes connected to the False output, which might execute different actions based on the quantity value.
+
+The Integer Branch blocks provide developers with the capability to create decision-making logic based on integer values within their graphs. By using conditional checks on integers, developers can build intelligent and adaptable applications that respond to specific numerical conditions. The Integer Branch category is an invaluable tool for developing complex and data-driven graphs in GraphLinq.
+
+
+
+***
+
+### More Information
+
 `Integer Branch` blocks are used to control executive flow by comparing two integer inputs.
 
 `Integer Branch` blocks are very similar to [`Decimal Branch`](decimal-branch.md) blocks; the only difference is that the two numbers being compared are integers, not decimals.

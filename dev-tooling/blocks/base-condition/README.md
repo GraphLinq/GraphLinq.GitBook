@@ -1,11 +1,17 @@
 # Base Condition
 
-This block category comprises four block types that are used to determine a graph's executive flow (which yellow connection will fire next). They are: [`Boolean Branch`](boolean-branch.md), [`Decimal Branch`](decimal-branch.md), [`Integer Branch`](integer-branch.md), and [`String Branch`](string-branch.md).&#x20;
+The Base Condition category in the GraphLinq IDE consists of blocks that provide conditional branching functionalities, allowing developers to create decision-making logic within their graphs. These blocks enable the graph to take different paths of execution based on specified conditions or the results of node outputs.
 
-A `Boolean Branch` block takes a boolean value as input, and fires one of two yellow outputs depending on the value of the boolean.
+Conditional branching is a fundamental concept in programming, and it allows developers to create dynamic and responsive graphs that can adapt to different scenarios and inputs. With the Base Condition blocks, developers can implement if-else statements, switch-case statements, and other conditional logic to control the flow of their graphs.
 
-A `Decimal Branch` block takes two decimals as input, and has different yellow outputs for all the following scenarios: the first number is greater than the second, the first number is greater than or equal to the second, the two numbers are equal, the first number is less than or equal to the second, and the first number is less than the second.
+The Base Condition category includes the following subcategories:
 
-An `Integer Branch` block works the same way as a `Decimal Branch` block, except that the two input numbers must be integers rather than decimals.
+The [Decimal Branch](decimal-branch.md) blocks are designed to perform conditional checks based on decimal values. These blocks take decimal inputs and execute different paths depending on whether the conditions are met or not.
 
-A `String Branch` block takes two strings as input, and fires one of two yellow outputs depending upon whether the two strings are identical or not.\
+The [Integer Branch](integer-branch.md) blocks allow developers to implement conditional checks based on integer values. These blocks take integer inputs and determine the appropriate path of execution based on the specified conditions.
+
+The [String Branch](string-branch.md) blocks provide conditional branching based on string values. Developers can use these blocks to create logic that evaluates string inputs and chooses different paths accordingly.
+
+The [Boolean Branch](boolean-branch.md) blocks are versatile components that perform conditional checks based on boolean values. These blocks enable developers to create if-else statements and make decisions based on the truthiness of boolean inputs.
+
+By utilizing the Base Condition blocks, developers can create complex and dynamic graphs that can respond to changing inputs and conditions. The conditional branching logic empowers graphs to adapt and make decisions in real-time, making the Base Condition category an essential tool for building versatile and interactive applications with GraphLinq.\
