@@ -1,11 +1,28 @@
 # Time
 
-This category of Blocks deals with getting time/date and manipulating those values. A timestamp is a sequence of characters or encoded information that represents the date and time at which a particular event occurred or a specific piece of data was created or modified. In simpler terms, a timestamp is a way of labeling a specific moment in time.
+The Time category of Blocks in the GraphLinq IDE focuses on obtaining time and date information and performing manipulations with timestamps. A timestamp serves as a unique label representing a specific moment in time, capturing the date and time when a particular event occurred or when data was created or modified.
 
-GraphLinq uses Unix Timestamps to generate the current time/date. Unix timestamps work by counting the number of seconds that have elapsed since a specific moment in time, which is defined as January 1, 1970, at 00:00:00 UTC (Coordinated Universal Time). This moment is known as the "Unix epoch".
+GraphLinq utilizes Unix Timestamps to generate current time and date values. Unix timestamps count the number of seconds that have passed since a predefined reference point, known as the "Unix epoch," which is set at January 1, 1970, 00:00:00 UTC (Coordinated Universal Time).
 
-There are two blocks for generating a timestamp:  [`Get Timestamp`](get-timestamp.md) [`Get Millisecond Timestamp`](get-milliseconds-timestamp.md). If you would like to subtract time from the current timestamp you can use `G`[`et Timestamp Offset`](get-timestamp-offset.md)  and [`Get Milliseconds Timestamp Offset`](get-milliseconds-timestamp-offset.md) respectively.
+Blocks for Generating Timestamps:
 
-To format a timestamp into a human readable date the blocks are [`Format Date`](format-date.md) ,  [`Timestamp to Date`](timestamp-to-date.md) , [`Millisecond Timestamp to Date`](millisecond-timestamp-to-date.md) .
+* The [Get Timestamp](get-timestamp.md) block provides the current Unix timestamp, indicating the present date and time.
+* The [Get Millisecond Timestamp](get-milliseconds-timestamp.md) block is similar but includes milliseconds for greater precision in the timestamp.
 
-The time category has two additional blocks: [Execution Time Interval](execution-time-interval.md), and [`Timer`](timer.md).
+Subtracting Time from Timestamps:
+
+* To subtract time from the current timestamp, the [Get Timestamp Offset](get-timestamp-offset.md) block allows users to specify the desired time interval to deduct.
+* The [Get Milliseconds Timestamp Offset](get-milliseconds-timestamp-offset.md) block performs the same operation but with milliseconds.
+
+Formatting Timestamps:
+
+* To convert a Unix timestamp into a human-readable date format, the [Format Date](format-date.md) block is utilized. Users can customize the date format as desired.
+* The [Timestamp to Date](timestamp-to-date.md) block serves a similar purpose, enabling the conversion of Unix timestamps to human-readable date formats.
+* The [Millisecond Timestamp to Date](millisecond-timestamp-to-date.md) block performs the same operation but includes milliseconds for precision.
+
+Additional Time Blocks:
+
+* The [Execution Time Interval](execution-time-interval.md) block calculates the time interval between the start and end of executing a specific part of the graph.
+* The [Timer](timer.md) block can be used to trigger an event after a specified time interval, facilitating time-based operations.
+
+These time-related blocks provide developers with the tools to work with timestamps, manipulate time and date data, and convert between Unix timestamps and human-readable formats, streamlining time-related operations in their graphs.
