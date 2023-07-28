@@ -1,14 +1,66 @@
+---
+description: Calculate the remainder after dividing one numeric value
+---
+
 # Modulo A % B
 
-The Modulo A % B block in the GraphLinq IDE performs the modulo operation on two given numeric values "A" and "B." The modulo operation calculates the remainder after dividing "A" by "B." This block is useful for obtaining the remainder of a division and is particularly relevant in scenarios where repetitive patterns or cyclical behaviors need to be identified.
+The Modulo A % B block in the GraphLinq IDE is a versatile mathematical block used to calculate the remainder after dividing one numeric value (A) by another (B). This block is particularly useful for handling cyclic or repetitive patterns, as well as determining even or odd numbers.
 
-Block Details: The Modulo A % B block has two input parameters, "A" and "B," representing the numeric values for which the modulo operation is to be performed. Both "A" and "B" can be of various numeric data types, such as decimal, integer, or long.
+### Block Description
 
-Execution: As with other block types in the Math category, the Modulo A % B block is non-executive. It does not have yellow connectors and is implicitly called whenever its output is needed as input by other executing blocks. When the Modulo A % B block's output is required in a graph, it performs the modulo operation on the input values "A" and "B" and provides the remainder as output.
+The Modulo A % B block belongs to the Math blocks category in the GraphLinq IDE. Like other blocks in this category, it is a non-executive block, meaning it does not have yellow connectors and is implicitly called when its output is needed by other blocks during graph execution.
 
-Use Case: The Modulo A % B block finds applications in various fields, including computer programming, finance, and cryptography. In computer programming, it is used for tasks such as checking if a number is even or odd, generating random numbers with a specific range, and implementing algorithms for handling cyclical behaviors or circular data structures.
+### Input Parameters
 
-Example: Let's consider an example to illustrate the usage of the Modulo A % B block. Suppose we have a graph that simulates a clock with hours, minutes, and seconds. The graph takes the total number of seconds as input and needs to calculate the equivalent time in hours, minutes, and remaining seconds.
+The Modulo A % B block requires two input parameters:
+
+1. A (Numeric Type): The A input represents the dividend or the numeric value from which the remainder is calculated.
+2. B (Numeric Type): The B input is the divisor, representing the numeric value used to divide A and calculate the remainder.
+
+Both A and B inputs accept various numeric data types, such as decimals, integers, and longs. It is essential to ensure that the B input is not set to zero, as division by zero is undefined and may result in errors in the graph's execution.
+
+### Output
+
+The Modulo A % B block outputs the remainder obtained by dividing the value of input A by the value of input B. The output is of the same data type as the inputs and represents the result of the modulo operation.
+
+### Example Use Case
+
+Let's explore a practical example of how the Modulo A % B block can be used within a graph:
+
+1. The graph receives a series of timestamp values (A) representing events.
+2. The Modulo A % B block is called, taking the timestamp values (A) as the dividend and a fixed value (B), such as 24, as the divisor.
+3. The block calculates the remainder when each timestamp is divided by 24, representing the hours of the day.
+4. The output represents the hours of the day (0 to 23) for each event timestamp, indicating the occurrence of events within different hours.
+
+In this example, the Modulo A % B block helps identify the cyclic pattern of events throughout the day, providing valuable insights into the timing and frequency of occurrences.
+
+### Conclusion
+
+The Modulo A % B block is a valuable mathematical tool in the GraphLinq IDE, enabling developers to perform modulo operations and extract remainders from numeric values. Its versatility makes it suitable for various applications, including time-related calculations, periodic event analysis, and determining even or odd numbers. By leveraging the Modulo A % B block, developers can efficiently handle cyclic patterns and gain valuable information from numeric data within their graphs.
+
+
+
+***
+
+### More Information
+
+The Modulo A % B block in the GraphLinq IDE performs the modulo operation on two given numeric values "A" and "B." The modulo operation calculates the remainder after dividing "A" by "B." This block is useful for obtaining the remainder of a division and is particularly relevant in scenarios where repetitive patterns or cyclical behaviors need to be identified.&#x20;
+
+#### Block Details
+
+The Modulo A % B block has two input parameters, "A" and "B," representing the numeric values for which the modulo operation is to be performed. Both "A" and "B" can be of various numeric data types, such as decimal, integer, or long.&#x20;
+
+#### Execution
+
+As with other block types in the Math category, the Modulo A % B block is non-executive. It does not have yellow connectors and is implicitly called whenever its output is needed as input by other executing blocks. When the Modulo A % B block's output is required in a graph, it performs the modulo operation on the input values "A" and "B" and provides the remainder as output.&#x20;
+
+#### Use Case
+
+The Modulo A % B block finds applications in various fields, including computer programming, finance, and cryptography. In computer programming, it is used for tasks such as checking if a number is even or odd, generating random numbers with a specific range, and implementing algorithms for handling cyclical behaviors or circular data structures.
+
+#### Example
+
+Let's consider an example to illustrate the usage of the Modulo A % B block. Suppose we have a graph that simulates a clock with hours, minutes, and seconds. The graph takes the total number of seconds as input and needs to calculate the equivalent time in hours, minutes, and remaining seconds.
 
 To achieve this, we can use the Modulo A % B block. First, we divide the total number of seconds by 3600 (the number of seconds in an hour) to calculate the hours. Then, we take the remainder after this division using the Modulo A % B block to find the remaining seconds. Next, we divide this remainder by 60 (the number of seconds in a minute) to calculate the minutes.
 
@@ -18,7 +70,9 @@ The Modulo A % B block's ability to calculate remainders is invaluable in variou
 
 
 
+***
 
+### Full Example
 
 `Modulo A % B` blocks output the result of a modulo operation\* of two given numbers.&#x20;
 

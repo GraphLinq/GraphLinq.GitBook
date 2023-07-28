@@ -1,14 +1,63 @@
+---
+description: >-
+  Round down a numeric value to the nearest integer less than or equal to the
+  original value
+---
+
 # Floor
+
+The Floor block in the GraphLinq IDE is a fundamental component that allows developers to round down a numeric value to the nearest integer less than or equal to the original value. This mathematical operation is particularly useful for scenarios where precision is not required, and the goal is to obtain a whole number representation of the data.
+
+Block Description: The Floor block is categorized under the Math blocks in the GraphLinq IDE. Like other blocks in this category, it is a non-executive block, meaning it has no yellow connectors and is implicitly called whenever its output is needed as input by other blocks during graph execution.
+
+### Input Parameters
+
+The Floor block requires a single input parameter:
+
+1. Value (Numeric Type): The Value input represents the numeric value that needs to be rounded down to the nearest integer. This input can accept various numeric data types, such as integers, decimals, and longs.&#x20;
+
+### Output
+
+The Floor block outputs the result of rounding down the input value to the nearest integer. The output is always of integer data type, representing the whole number obtained after applying the floor function.
+
+### Example Use Case
+
+Let's explore a practical example of how the Floor block can be used within a graph that processes financial data.
+
+1. The graph receives real-time price data for a cryptocurrency, expressed as a decimal value (e.g., 45.75).
+2. The Floor block is then called, taking the price data as input.
+3. The block applies the floor function to the input value, rounding it down to the nearest whole number (e.g., 45).
+4. The resulting integer value (e.g., 45) is further processed or used in subsequent calculations within the graph.
+
+In this example, the Floor block is employed to obtain a whole number representation of the cryptocurrency price, which is often used for display purposes or to make decisions based on discrete price levels. The simplicity and efficiency of the Floor block make it an essential tool for handling numeric data in scenarios where fractional values need to be converted into integers.
+
+### Conclusion
+
+The Floor block offers a straightforward and effective solution for rounding down numeric values to the nearest integer. By using this block, developers can easily handle numeric data within their graphs, ensuring that the data aligns with specific requirements or calculations. Whether it's for financial applications, data processing, or any other scenario where precision is not a primary concern, the Floor block proves to be a valuable asset in achieving accurate and reliable results.
+
+
+
+***
+
+### More Information
 
 The Floor block in the GraphLinq IDE is a key mathematical block used to round down a numeric value to the nearest integer that is less than or equal to the original value. This block allows developers to truncate decimal or floating-point numbers and obtain whole numbers as output.
 
-Block Details: The Floor block takes a single input parameter called "A," which represents the numeric value that needs to be rounded down. The block performs the floor operation on the input value "A" and outputs the resulting integer. "A" can be of various numeric data types, such as decimal, integer, or long.
+#### Block Details
 
-Execution: Like other block types in the Math category, the Floor block is non-executive. It does not have yellow connectors and is implicitly called when its output is required by other executing blocks. Whenever the Floor block's output is needed in a graph, it automatically performs the floor operation on the input value "A" and provides the rounded-down integer as output.
+The Floor block takes a single input parameter called "A," which represents the numeric value that needs to be rounded down. The block performs the floor operation on the input value "A" and outputs the resulting integer. "A" can be of various numeric data types, such as decimal, integer, or long.
 
-Use Case: The Floor block is particularly useful when dealing with financial or quantitative data that involves rounding down decimal numbers to obtain whole numbers. It is commonly employed in areas such as accounting, finance, statistics, and data analysis.
+#### Execution
 
-Example: Let's consider an example to demonstrate the functionality of the Floor block. Suppose we have a graph that calculates the number of days required to complete a project based on the estimated total hours and the daily work capacity.
+Like other block types in the Math category, the Floor block is non-executive. It does not have yellow connectors and is implicitly called when its output is required by other executing blocks. Whenever the Floor block's output is needed in a graph, it automatically performs the floor operation on the input value "A" and provides the rounded-down integer as output.
+
+#### Use Case
+
+The Floor block is particularly useful when dealing with financial or quantitative data that involves rounding down decimal numbers to obtain whole numbers. It is commonly employed in areas such as accounting, finance, statistics, and data analysis.&#x20;
+
+#### Example
+
+Let's consider an example to demonstrate the functionality of the Floor block. Suppose we have a graph that calculates the number of days required to complete a project based on the estimated total hours and the daily work capacity.
 
 The graph takes inputs "Total Hours" (A) and "Daily Work Capacity" (B). To calculate the number of days required, we need to divide the total hours by the daily work capacity. However, we also need to consider that partial days cannot be allocated, and we want to round down to the nearest whole number of days.
 
@@ -19,6 +68,10 @@ By using the Floor block in this example, we ensure that we obtain accurate and 
 The Floor block's ability to truncate decimal values is valuable in scenarios where precise whole numbers are necessary for further calculations, analysis, or decision-making. It provides developers with a simple yet powerful tool for handling rounding down operations and enhances the accuracy of their graphs and applications.
 
 
+
+***
+
+### Full Example
 
 `Floor` blocks are used to round numbers down to the nearest integer. They are very similar to [`Ceiling`](ceiling.md) blocks; the only difference between the two is that `Ceiling` blocks round up (so 5.01 -> 6), whereas `Floor` blocks round down (so 5.99 -> 5).
 

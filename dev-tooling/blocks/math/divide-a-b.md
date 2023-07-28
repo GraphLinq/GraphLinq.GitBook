@@ -1,14 +1,66 @@
+---
+description: Perform division operations
+---
+
 # Divide A / B
+
+The Divide A / B block in the GraphLinq IDE is a fundamental mathematical block used to calculate the result of dividing one numeric value (A) by another (B). This block enables developers to perform division operations within their graphs and handle scenarios where sharing or splitting quantities is required.
+
+### Block Description
+
+The Divide A / B block belongs to the Math blocks category in the GraphLinq IDE. As with other blocks in this category, it is a non-executive block, meaning it lacks yellow connectors and is implicitly called when its output is needed as input by other blocks during graph execution.
+
+### Input Parameters
+
+The Divide A / B block requires two input parameters:
+
+1. A (Numeric Type): The A input represents the numerator or dividend in the division operation.
+2. B (Numeric Type): The B input represents the denominator or divisor in the division operation.
+
+Both A and B inputs accept various numeric data types, such as decimals, integers, and longs. It is essential to ensure that the B input is not set to zero, as division by zero is undefined and may lead to errors in the graph's execution.
+
+### Output
+
+The Divide A / B block outputs the result of dividing the value of input A by the value of input B. The output is of the same data type as the inputs and represents the quotient or result of the division operation.
+
+### Example Use Case
+
+Let's explore a practical example of how the Divide A / B block can be utilized within a graph to calculate the division of two quantities:
+
+1. The graph retrieves data, such as the total quantity of items in stock (A) and the number of items sold (B).
+2. The Divide A / B block is called, taking the values of A (total quantity) and B (number of items sold) as inputs.
+3. The block calculates the division of A by B, resulting in the ratio of items sold to the total quantity.
+4. The resulting quotient is then used for further analysis or to generate reports on sales performance.
+
+In this example, the Divide A / B block facilitates the computation of a vital business metric—the percentage of items sold out of the total quantity available. This information can be crucial for inventory management, sales forecasting, and decision-making processes.:&#x20;
+
+### Conclusion
+
+The Divide A / B block is an indispensable tool for performing division operations within graphs in the GraphLinq IDE. By using this block, developers can effortlessly calculate ratios, proportions, or percentages based on numeric values. Whether it's for business analytics, financial calculations, or any scenario that requires division, the Divide A / B block proves to be a valuable asset in ensuring accurate and efficient mathematical computations.
+
+
+
+***
+
+### More Information
 
 The Divide A / B block in the GraphLinq IDE is a fundamental mathematical block used to perform division operations between two numeric values. This block enables developers to divide one number (A) by another number (B) and obtain the result as the output.
 
-Block Details: The Divide A / B block has two input parameters: "A" and "B." These parameters represent the dividend and divisor, respectively. The block takes the value of "A" and divides it by the value of "B" to compute the division result. Both "A" and "B" can be of various numeric data types, such as decimal, integer, or long.
+#### Block Details
 
-Execution: As with other block types in the Math category, the Divide A / B block is non-executive. It does not have yellow connectors and is not explicitly called by other blocks. Instead, it is implicitly called whenever its output is needed as input by other executing blocks.
+The Divide A / B block has two input parameters: "A" and "B." These parameters represent the dividend and divisor, respectively. The block takes the value of "A" and divides it by the value of "B" to compute the division result. Both "A" and "B" can be of various numeric data types, such as decimal, integer, or long.
 
-Use Case: The Divide A / B block is essential for performing division operations within graphs. It finds applications in various scenarios, such as calculating ratios, proportions, percentages, and scaling values. In financial applications, it can be used to determine unit prices, interest rates, or profit margins. Additionally, the block is valuable in data analysis and manipulation tasks where numeric values need to be divided to obtain meaningful insights.
+#### Execution
 
-Example: Let's consider an example to illustrate the functionality of the Divide A / B block. Suppose we have a graph that calculates the average rating of a product based on the total sum of ratings and the number of ratings received.
+As with other block types in the Math category, the Divide A / B block is non-executive. It does not have yellow connectors and is not explicitly called by other blocks. Instead, it is implicitly called whenever its output is needed as input by other executing blocks.
+
+#### Use Case
+
+The Divide A / B block is essential for performing division operations within graphs. It finds applications in various scenarios, such as calculating ratios, proportions, percentages, and scaling values. In financial applications, it can be used to determine unit prices, interest rates, or profit margins. Additionally, the block is valuable in data analysis and manipulation tasks where numeric values need to be divided to obtain meaningful insights.
+
+#### Example
+
+Let's consider an example to illustrate the functionality of the Divide A / B block. Suppose we have a graph that calculates the average rating of a product based on the total sum of ratings and the number of ratings received.
 
 The graph takes inputs "Total Ratings" (A) and "Number of Ratings" (B). To calculate the average rating, we need to divide the total sum of ratings by the number of ratings received. Here, we can use the Divide A / B block to perform the division operation.
 
@@ -18,7 +70,9 @@ By using the Divide A / B block, developers can perform precise division operati
 
 
 
+***
 
+### Full Example
 
 `Divide A / B` blocks divide one given number by another and then output the result.
 

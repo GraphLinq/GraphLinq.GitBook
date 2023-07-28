@@ -1,16 +1,66 @@
+---
+description: Addition operations on numeric values
+---
+
 # Add A + B
 
-Add A + B
+The Add A + B block in the GraphLinq IDE is a fundamental mathematical component that allows developers to perform addition operations on numeric values. This block is a fundamental arithmetic operation that enables the combination of two numeric inputs to produce a single output representing their sum.
+
+### Block Description
+
+The Add A + B block is categorized under the Math blocks in the GraphLinq IDE. Like other blocks in this category, it is a non-executive block, which means it does not have any yellow connectors and is implicitly called whenever its output is needed as input by other blocks during graph execution.
+
+### Input Parameters
+
+The Add A + B block requires two input parameters:
+
+1. A (Numeric Type): The A input represents the first numeric value to be added.
+2. B (Numeric Type): The B input represents the second numeric value to be added.
+
+Both A and B can accept various numeric data types, such as integers, decimals, and longs.
+
+### Output
+
+The Add A + B block outputs the result of the addition operation performed on the input values A and B. The output is of the same data type as the input values and represents the sum of A and B.
+
+### Example Use Case
+
+Let's explore a practical example of how the Add A + B block can be used within a graph to calculate the total price of items in a shopping cart.
+
+1. The graph receives real-time price data for each item in the shopping cart, expressed as decimal values (e.g., 10.50, 25.75, etc.).
+2. The Add A + B block is called, taking the individual item prices as inputs A and B.
+3. The block performs the addition operation, combining the prices of two items to calculate the total price.
+4. The resulting sum (e.g., 36.25) is further processed or used in subsequent calculations within the graph.
+
+In this example, the Add A + B block plays a crucial role in calculating the total price of the items in the shopping cart by summing the individual item prices. The simplicity and efficiency of the Add A + B block make it an essential tool for performing basic arithmetic operations on numeric data in various graph scenarios.&#x20;
+
+### Conclusion
+
+The Add A + B block provides a straightforward and efficient solution for performing addition operations on numeric values in the GraphLinq IDE. By using this block, developers can easily combine two numeric inputs to produce a single output representing their sum. Whether it's for financial calculations, data aggregation, or any other scenario involving numeric data, the Add A + B block proves to be a valuable asset in achieving accurate and reliable results.
+
+
+
+***
+
+### More Information
 
 The Add A + B block is a fundamental component in the GraphLinq IDE, designed to calculate the sum of two numeric values, A and B. This block takes two inputs, "A" and "B," and efficiently computes their sum. The output of this operation is the numerical result of adding A and B together.
 
-Block Details: Add A + B blocks have two input parameters: "A" and "B." These input parameters can accept various types of numeric data, such as decimal, integer, or long. Additionally, "A" and "B" can have different data types, enabling users to add a decimal value to an integer value or vice versa.
+Block Details:&#x20;
 
-Execution: Similar to other block types in the Math category, Add A + B blocks are non-executive blocks. They do not have yellow connectors, which means they are not explicitly called by other blocks and cannot call other blocks themselves. Instead, they are implicitly called whenever their output is required as input by some other executing block.
+Add A + B blocks have two input parameters: "A" and "B." These input parameters can accept various types of numeric data, such as decimal, integer, or long. Additionally, "A" and "B" can have different data types, enabling users to add a decimal value to an integer value or vice versa.
 
-Use Case: The Add A + B block finds extensive applications in various domains where numerical addition is necessary. It is commonly used in financial calculations, data analysis, and general arithmetic operations. For instance, in financial applications, this block can be used to calculate total investment amounts, revenue projections, or asset valuations.
+Execution:&#x20;
 
-Example: Let's consider an example to demonstrate the functionality of the Add A + B block. Suppose we have a graph that calculates the total sales revenue for a business. The graph takes inputs "A" and "B," representing the revenue from two different product lines. The Add A + B block then computes the total revenue by adding the revenue from both product lines together.
+Similar to other block types in the Math category, Add A + B blocks are non-executive blocks. They do not have yellow connectors, which means they are not explicitly called by other blocks and cannot call other blocks themselves. Instead, they are implicitly called whenever their output is required as input by some other executing block.
+
+Use Case:&#x20;
+
+The Add A + B block finds extensive applications in various domains where numerical addition is necessary. It is commonly used in financial calculations, data analysis, and general arithmetic operations. For instance, in financial applications, this block can be used to calculate total investment amounts, revenue projections, or asset valuations.
+
+Example:&#x20;
+
+Let's consider an example to demonstrate the functionality of the Add A + B block. Suppose we have a graph that calculates the total sales revenue for a business. The graph takes inputs "A" and "B," representing the revenue from two different product lines. The Add A + B block then computes the total revenue by adding the revenue from both product lines together.
 
 The output of the Add A + B block represents the overall sales revenue, which can be further processed or displayed using other blocks in the graph. The graph can be configured to update in real-time, allowing business owners to monitor their total revenue dynamically as it changes.
 
@@ -20,9 +70,9 @@ The versatility of the Add A + B block makes it an indispensable tool for develo
 
 
 
+***
 
-
-
+### Full Example
 
 `Add A + B` blocks, as the name suggests, simply add two given numbers together and then output the result.
 
