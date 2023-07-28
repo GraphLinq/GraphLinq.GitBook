@@ -83,7 +83,7 @@
     * [Serialize to JSON](dev-tooling/blocks/json/serialize-to-json.md)
   * [Log](dev-tooling/blocks/log/README.md)
     * [Print](dev-tooling/blocks/log/print.md)
-  * [WebSocket](dev-tooling/blocks/websocket/README.md)
+  * [WebSocket](dev-tooling/blocks/websocket.md)
     * [WebSocket Client Close](dev-tooling/blocks/websocket/websocket-client-close.md)
     * [WebSocket Client Connector](dev-tooling/blocks/websocket/websocket-client-connector.md)
     * [On WebSocket Client Disconnect](dev-tooling/blocks/websocket/on-websocket-client-disconnect.md)

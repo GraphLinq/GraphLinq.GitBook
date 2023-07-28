@@ -1,5 +1,31 @@
 # String Contains
 
+The [String Contains](string-contains.md) block is a versatile component in the GraphLinq IDE used to check if a specific substring exists within a given string. It is invaluable for performing conditional checks and making decisions based on the presence or absence of certain patterns in the input strings.
+
+**Usage:**
+
+The [String Contains](string-contains.md) block takes two string inputs: the main string and the substring. It then evaluates whether the substring is a part of the main string. If the substring is found within the main string, the block outputs a boolean value "true"; otherwise, it outputs "false."
+
+**Example:**
+
+Suppose we have a string "GraphLinq is awesome," and we want to check if it contains the substring "awesome." We can use the "String Contains" block with the main string as "GraphLinq is awesome" and the substring as "awesome." The block will return "true" because the substring "awesome" is present in the main string.
+
+**Advantages:**
+
+The "String Contains" block empowers developers to create conditional logic within their graphs. By checking for specific substrings, graphs can dynamically adapt their behavior based on user input or real-time data, making applications more interactive and responsive.
+
+**Summary:**
+
+The "String Contains" block in the GraphLinq IDE provides a straightforward way to determine if a particular substring exists within a given string. It enables the implementation of conditional checks and dynamic decision-making in graphs, enhancing the graph's ability to respond intelligently to different scenarios.
+
+
+
+
+
+
+
+
+
 `String Contains` blocks make it possible to search through a string to see if it contains some other string. This allows us to sift through text from whatever sources and check for certain words or phrases.
 
 In the following example, we check every message that a Telegram bot hears to see if it contains the string "forbidden phrase". If it hears "forbidden phrase", it sends a warning message in the same Telegram channel that it heard the message in.
