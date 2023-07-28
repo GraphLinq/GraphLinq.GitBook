@@ -1,6 +1,6 @@
 # Set variable
 
-`Set variable` blocks are used to both declare variables and assign values to variables.
+The [Set Variable](set-variable.md) block is used to store or update a variable with a specified name and value within the graph's data context. It allows us to save data for later use and update variable values as the graph executes.
 
 `Set variable` blocks have two inputs: a string for the variable's name, and the data that we want to assign to the variable.
 
