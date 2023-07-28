@@ -1,8 +1,8 @@
 # Boolean
 
-The `Boolean` block allows us to to enter boolean values ("true" or "false") to be used as conditions to determine execution flow (which yellow line we'll be following next).
+The Boolean block in the GraphLinq IDE allows users to enter boolean values ("true" or "false"), which serve as conditions to determine the execution flow of the graph. These boolean values act as control signals, guiding the graph to follow specific yellow lines based on their true or false status.
 
-The simplest way to use a boolean value to control flow is with the help of a [`Boolean Branch`](../base-condition/boolean-branch.md) block, which takes a boolean as input, and executes one of two output connections depending on the value of the boolean, as seen here:
+A common way to use boolean values to control flow is by employing the [Boolean Branch](../base-condition/boolean-branch.md) block, which takes a boolean input and executes one of two output connections depending on the value of the boolean. Here's an example of how the [Boolean Branch](../base-condition/boolean-branch.md) block works:
 
 <figure><img src="https://i.imgur.com/cD6prkM.png" alt=""><figcaption></figcaption></figure>
 

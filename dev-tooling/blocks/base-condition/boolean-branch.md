@@ -16,3 +16,7 @@ In the second part of the example, we have a `Timer` block that fires every minu
 
 
 <figure><img src="https://i.imgur.com/2OUFxLQ.png" alt=""><figcaption></figcaption></figure>
+
+The [Boolean Branch](boolean-branch.md) block in the GraphLinq IDE is used to control the flow of execution based on a boolean condition. It has two inputs and two outputs, all represented by yellow lines in the IDE. The first input is the path of execution, and the second input is a boolean variable called "Condition".
+
+The [Boolean Branch ](boolean-branch.md)block reads the value of the "Condition" boolean variable and follows the yellow execution path based on its true or false status. If the "Condition" is true, the Boolean Branch will follow the "True" output yellow line, and if the "Condition" is false, it will follow the "False" output yellow line.
