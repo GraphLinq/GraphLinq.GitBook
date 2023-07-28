@@ -1,5 +1,29 @@
 # Ceiling
 
+The Ceiling block in the GraphLinq IDE is a powerful mathematical tool used to round up a numeric value to the nearest integer greater than or equal to that value. This block is particularly useful when precision is required in numeric calculations, ensuring that values are rounded up to the desired level of accuracy.
+
+Block Details: The Ceiling block takes a single input parameter, "A," which represents the numeric value that needs to be rounded up. This input can accept various types of numeric data, such as decimal, integer, or long. The Ceiling block's output is the rounded-up integer result of the input value.
+
+Execution: Like other block types in the Math category, the Ceiling block is a non-executive block. It does not have yellow connectors and is not directly called by other blocks. Instead, it is implicitly called whenever its output is required as input by other executing blocks.
+
+Use Case: The Ceiling block is essential in situations where precise rounding of numeric values is required. It is commonly used in financial applications, pricing calculations, and scenarios where data needs to be presented in a clear and consistent format. For example, in e-commerce applications, the Ceiling block can be used to round up product prices to the nearest whole number or a specific decimal place, ensuring consistent and accurate pricing.
+
+Example: Let's consider an example to demonstrate the functionality of the Ceiling block. Suppose we have a graph that calculates the total cost of purchasing a specific quantity of items. The graph takes inputs "Unit Price" and "Quantity," representing the price of each item and the desired quantity to purchase, respectively.
+
+To determine the total cost, we need to multiply the unit price by the quantity. However, in certain scenarios, the unit price may have decimal places, and we want to ensure that the total cost is rounded up to the nearest whole number. Here, we can use the Ceiling block to round up the calculated total cost.
+
+The Ceiling block takes the product of the unit price and quantity as input and rounds it up to the nearest integer, representing the total cost of the purchase. This ensures that the total cost is always rounded up to the desired level of accuracy, even if the unit price has fractional values.
+
+By utilizing the Ceiling block, developers can perform precise rounding of numeric values within their graphs, ensuring that calculations and data processing tasks are accurate and reliable. The Ceiling block is an essential tool for maintaining consistency and precision in numerical operations, making it a valuable asset in various applications across industries.
+
+
+
+
+
+
+
+
+
 `Ceiling` blocks are used to round numbers up to the nearest integer. They are very similar to [`Floor`](floor.md) blocks; the only difference between the two is that `Ceiling` blocks round up (so 5.01 -> 6), whereas `Floor` blocks round down (so 5.99 -> 5).
 
 `Ceiling` blocks only have one input parameter called "Number", which is the number that we would like to round up. The logical data type for this parameter is decimal.

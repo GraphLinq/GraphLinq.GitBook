@@ -1,5 +1,25 @@
 # Divide A / B
 
+The Divide A / B block in the GraphLinq IDE is a fundamental mathematical block used to perform division operations between two numeric values. This block enables developers to divide one number (A) by another number (B) and obtain the result as the output.
+
+Block Details: The Divide A / B block has two input parameters: "A" and "B." These parameters represent the dividend and divisor, respectively. The block takes the value of "A" and divides it by the value of "B" to compute the division result. Both "A" and "B" can be of various numeric data types, such as decimal, integer, or long.
+
+Execution: As with other block types in the Math category, the Divide A / B block is non-executive. It does not have yellow connectors and is not explicitly called by other blocks. Instead, it is implicitly called whenever its output is needed as input by other executing blocks.
+
+Use Case: The Divide A / B block is essential for performing division operations within graphs. It finds applications in various scenarios, such as calculating ratios, proportions, percentages, and scaling values. In financial applications, it can be used to determine unit prices, interest rates, or profit margins. Additionally, the block is valuable in data analysis and manipulation tasks where numeric values need to be divided to obtain meaningful insights.
+
+Example: Let's consider an example to illustrate the functionality of the Divide A / B block. Suppose we have a graph that calculates the average rating of a product based on the total sum of ratings and the number of ratings received.
+
+The graph takes inputs "Total Ratings" (A) and "Number of Ratings" (B). To calculate the average rating, we need to divide the total sum of ratings by the number of ratings received. Here, we can use the Divide A / B block to perform the division operation.
+
+The block takes "Total Ratings" as A and "Number of Ratings" as B, and it computes the division result, which represents the average rating of the product. This enables us to obtain the average rating as output, which can then be used for further analysis or display.
+
+By using the Divide A / B block, developers can perform precise division operations within their graphs, allowing them to handle various numerical calculations and data processing tasks efficiently. The block plays a crucial role in ensuring accuracy and reliability in division-based computations, making it an indispensable component in numerous applications.
+
+
+
+
+
 `Divide A / B` blocks divide one given number by another and then output the result.
 
 `Divide A / B` blocks have two input parameters called "A" and "B". These are the two numbers that we want to get the quotient of. Note that these input parameters can be supplied with any type of numeric data (decimal, integer, long), and the two data types do not need to match (ie: you can divide a decimal value by an integer value).

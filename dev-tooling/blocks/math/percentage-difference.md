@@ -1,5 +1,25 @@
 # Percentage Difference
 
+The Percentage Difference block in the GraphLinq IDE is a valuable tool for calculating the percentage difference between two given numeric values "A" and "B." It enables developers to determine the percentage change or variance between two quantities, expressing the result as a percentage. The Percentage Difference block plays a crucial role in various scenarios where comparing relative changes in values is essential.
+
+Block Details: The Percentage Difference block takes two input parameters, "A" and "B," which represent the numeric values for comparison. Both "A" and "B" can be of various numeric data types, such as decimal, integer, or long. The block calculates the percentage difference between "A" and "B" and provides the result as its output.
+
+Execution: As with other block types in the Math category, the Percentage Difference block is non-executive. It does not have yellow connectors and is implicitly called whenever its output is needed as input by other executing blocks. When the Percentage Difference block's output is required in a graph, it performs the calculation to find the percentage difference between the input values "A" and "B" and delivers the result as its output.
+
+Use Case: The Percentage Difference block finds broad applications in various fields, including finance, economics, statistics, and data analysis. In finance, it is used to analyze the performance of investments and financial instruments by comparing their values over time. In economics, it aids in evaluating changes in economic indicators and trends. In statistics, it is utilized to assess changes in data distributions and relationships between variables. In data analysis, the block helps in quantifying variations in datasets and identifying outliers.
+
+Example: Let's consider an example to illustrate the usage of the Percentage Difference block. Suppose we have a graph that tracks the monthly revenue of an e-commerce website. The graph takes the revenue for the current month (A) and the revenue for the previous month (B) as inputs and needs to calculate the percentage change in revenue.
+
+To achieve this, we can use the Percentage Difference block. By providing the revenue for the current month (A) and the revenue for the previous month (B) to the Percentage Difference block, it calculates the percentage difference and outputs the result. This enables us to quickly determine the percentage increase or decrease in revenue from one month to the next, providing valuable insights into the business's performance.
+
+The Percentage Difference block's ability to calculate percentage variations is crucial in various real-world scenarios where understanding relative changes in values is essential. It empowers developers to perform percentage-based analyses within their graphs and facilitates data-driven decision-making in diverse domains.
+
+
+
+
+
+
+
 `Percentage Difference` blocks calculate the percentage difference between two given numbers, with respect to the first of the two numbers.
 
 `Percentage Difference` blocks have two input parameters called "A" and "B". Their output expresses what percent "A" would need to change for it to be equal to "B". This is equivalent to _100(B - A) / A_.
