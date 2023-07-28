@@ -1,5 +1,36 @@
 # Decimal Range Branch
 
+The Decimal Range Branch block is a crucial element in the Range Condition category of the GraphLinq IDE. This block allows developers to define and evaluate numeric ranges for decimal values, enabling conditional branching based on whether a given value falls within the specified range.
+
+### Inputs
+
+1. Value: The "Value" input represents the decimal value that will be evaluated to determine whether it lies within the defined range.
+2. Lower Bound: The "Lower Bound" input defines the lower limit of the range. Any value greater than or equal to this lower bound is considered within the range.
+3. Upper Bound: The "Upper Bound" input defines the upper limit of the range. Any value less than or equal to this upper bound is considered within the range.
+
+### Behavior
+
+The Decimal Range Branch block evaluates the "Value" against the defined range using the "Lower Bound" and "Upper Bound" inputs. The branching behavior is as follows:
+
+* If the "Value" is greater than or equal to the "Lower Bound" and less than or equal to the "Upper Bound," the graph will follow the path connected to the "Within Range" output.
+* If the "Value" is outside the defined range, the graph will follow the path connected to the "Outside Range" output.
+
+### Example
+
+Let's consider an example where we use the Decimal Range Branch block to check whether the temperature value falls within the "Comfortable Range" for a thermostat control system. We define the "Comfortable Range" as 20 to 25 degrees Celsius.
+
+If the temperature reading is 22 degrees Celsius, it falls within the defined range, and the graph will follow the path connected to the "Within Range" output. This may trigger actions to maintain the current temperature.
+
+If the temperature reading is 18 degrees Celsius, it is outside the defined range, and the graph will follow the path connected to the "Outside Range" output. This may trigger actions to adjust the temperature to bring it within the desired range.
+
+The Decimal Range Branch block provides a versatile tool for developers to implement range-based conditions in their GraphLinq graphs. By defining specific ranges for decimal values, developers can create dynamic and responsive applications that adapt to varying data inputs and make decisions based on precise conditions. This block adds a new layer of complexity and flexibility to graphs, enabling them to handle a wide range of scenarios with accuracy and efficiency.
+
+
+
+***
+
+### More Information
+
 `Decimal Range Branch` blocks are used to control executive flow (which yellow connection will fire next) based upon whether a given decimal value is above (or equal to) the upper bound of a range, or below (or equal to) the lower bound of a range.
 
 `Decimal Range Branch` blocks have three inputs, all of type decimal: "Value" is the number that we are checking against the range, "RangeMax" defines the upper bound of the range, and "RangeMin" defines the lower bound of the range.
