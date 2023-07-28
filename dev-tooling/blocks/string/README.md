@@ -1,3 +1,7 @@
+---
+description: Manipulate and work with string data
+---
+
 # String
 
 The String blocks in the GraphLinq IDE are designed to manipulate and work with string data, which consists of sequences of letters, digits, and special characters. These blocks offer essential functionalities for string operations, making them valuable tools for processing and transforming textual data within graphs.
