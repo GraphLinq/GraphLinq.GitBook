@@ -35,7 +35,3 @@ Let's consider a use case where you have to create a function to handle user aut
 6. The return values from the function call are then utilized in subsequent nodes to control the flow of the graph based on the authentication result.
 
 By defining a user authentication function, developers can create a reusable and organized structure, enhancing the modularity and readability of the graph. This facilitates easier debugging and maintenance of the graph in the long term.
-
-***
-
-I hope this suits your needs. If you have any specific details to add or change, feel free to let me know!
