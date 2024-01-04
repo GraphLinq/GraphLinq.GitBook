@@ -244,6 +244,7 @@
     * [Get Uniswap Token Price](dev-tooling/blocks-blockchains/uniswap/get-uniswap-token-price.md)
     * [On Uniswap Swap](dev-tooling/blocks-blockchains/uniswap/on-uniswap-swap.md)
     * [On Uniswap Sync](dev-tooling/blocks-blockchains/uniswap/on-uniswap-sync.md)
+  * [Solana](dev-tooling/blocks-blockchains/solana.md)
 * [Blocks (Charting)](dev-tooling/blocks-charting/README.md)
   * [Generate Time Series One Line Chart](dev-tooling/blocks-charting/generate-time-series-one-line-chart.md)
   * [Generate Time Series Two Line Chart](dev-tooling/blocks-charting/generate-time-series-two-line-chart.md)
