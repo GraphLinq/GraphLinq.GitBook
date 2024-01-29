@@ -4,34 +4,37 @@ description: Send HTTP PUT requests
 
 # Put HTTP Request
 
-The Put HTTP Request block is a fundamental component in the GraphLinq IDE that enables sending HTTP PUT requests to external web servers or APIs. The PUT method is one of the standard HTTP methods used to update or replace a resource on the server. This block empowers developers to interact with RESTful APIs and perform various actions, such as modifying existing records or updating data on remote servers.
+### **Overview**
 
-### Block Description
+Within the GraphLinq Integrated Development Environment (IDE), the `Put HTTP Request` block is essential for initiating HTTP PUT requests to external web servers or APIs. This method is crucial for updating or replacing resources on a server, allowing developers to effectively modify existing records or refresh data on remote servers using RESTful APIs.
 
-Similar to other HTTP request blocks, the Put HTTP Request block is a non-executive block, meaning it does not have any yellow connectors and is implicitly called whenever its output is required by another block during graph execution. This versatility makes it a powerful tool for handling data updates and interactions with external APIs.
+### **Block Characteristics**
 
-### Input Parameters
+* **Type**: Non-executive, operating without yellow connectors and is triggered indirectly as other blocks in the graph require its output.
+* **Functionality**: Specially designed for data updates or replacements, making it an invaluable asset for interfacing with external APIs.
 
-The Put HTTP Request block requires several input parameters to perform the HTTP PUT request:
+### **Inputs**
 
-1. URL (Uniform Resource Locator): The URL of the web server or API endpoint to which the PUT request will be sent. This parameter specifies the resource that will be updated or replaced on the server.
-2. Headers: Headers are optional parameters that provide additional information to the server about the request. Developers can include custom headers as key-value pairs to communicate specific requirements or authentication details to the server.
-3. Body: The body of the PUT request contains the data to be updated or replaced on the server. This data is typically formatted as a JSON object or other data formats, depending on the API's requirements.
+To execute a PUT request, the block necessitates the following inputs:
 
-### Output
+* **URL**: Points to the specific server or API endpoint where the data update or replacement will occur.
+* **Headers**: An [Array](../array/) of [Key-Value](../base-variable/keyvalue.md) pairs, allowing for the transmission of additional request information or authentication details to the server. These headers are optional but can be pivotal for specific server communications.
+* **Body**: Contains the payload with the data meant to be updated or replaced, often formatted as a JSON object or according to the API's prescribed data formats.
 
-The Put HTTP Request block outputs the result of the HTTP PUT request. This result may include the response status code, response data, or any other relevant information returned by the server.
+### **Output**
 
-### Example Use Case
+The block yields the server's response following the PUT request, encompassing the status code, any returned data, and potentially other relevant feedback.
 
-Let's consider a practical example where the Put HTTP Request block is used to interact with a fictional API that allows users to update their profile information. In this scenario, the graph needs to collect updated user profile data and send it to the API to update the user's profile on the server.
+### **Practical Application**
 
-1. The graph starts with a user interface (e.g., web form or chatbot) that collects the updated profile data.
-2. The updated profile data is stored in a variable or data source within the graph.
-3. The Put HTTP Request block is then configured with the API's URL, including the updated profile data as part of the request body.
-4. Optionally, custom headers can be added to the request for authentication or other purposes.
-5. The Put HTTP Request block is implicitly called when its output is required by another block in the graph.
-6. Upon execution, the block sends the HTTP PUT request to the API, updating the user's profile data on the server.
-7. The server processes the request and returns the response, which may include a success status or other relevant data.
+Imagine a scenario where the `Put HTTP Request` block updates user profile data through a fictional API:
 
-By utilizing the Put HTTP Request block, developers can seamlessly integrate data update functionality into their graphs, allowing them to interact with various web services and APIs that support the HTTP PUT method. This empowers them to build powerful applications that can securely update or replace data on remote servers, providing users with the ability to manage and modify their information within the application's ecosystem.
+1. The process begins with an interface (e.g., a web form or chatbot) that collects the user's new profile information.
+2. This updated data is then stored within a designated variable or data store in the graph.
+3. Subsequently, the block is configured with the API's URL, incorporating the updated profile data into the request body.
+4. Headers are crucial at this stage; developers can append custom key-value pairs to convey specific instructions or authentication details to the server.
+5. The block is indirectly activated by the graph's logic whenever its output becomes necessary.
+6. The PUT request is dispatched to the API, aiming to update the user's profile on the server.
+7. Following the request processing, the server returns a response, which might confirm the update or provide additional information.
+
+This use case illustrates how the `Put HTTP Request` block seamlessly integrates data update capabilities into graphs, enabling interactions with a variety of web services and APIs that accept the HTTP PUT method. This enriches applications by allowing secure and efficient data modification or replacement on remote servers, thus offering users enhanced control over their data within the application ecosystem.

@@ -15,7 +15,7 @@ The Delete HTTP Request block is a non-executive block, meaning it does not have
 The Delete HTTP Request block requires several input parameters to perform the HTTP DELETE request:
 
 1. URL (Uniform Resource Locator): The URL of the web server or API endpoint to which the DELETE request will be sent. This parameter specifies the resource that needs to be deleted.
-2. Headers: Headers are optional parameters that provide additional information to the server about the request. Developers can include custom headers as key-value pairs to communicate specific requirements or authentication details to the server.
+2. Headers: An [Array](../array/) of [Key-Value](../base-variable/keyvalue.md) pairs, allowing for the transmission of additional request information or authentication details to the server. These headers are optional but can be pivotal for specific server communications.
 3. Query Parameters: Query parameters are used to pass additional data with the DELETE request. They are typically added to the URL and can be used for filtering or specifying certain conditions for the resource deletion.
 
 ### Output
