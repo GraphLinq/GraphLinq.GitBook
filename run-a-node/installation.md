@@ -2,7 +2,7 @@
 
 **`docker pull graphlinqchain/docker-glq-nodemanager:v0.0.3`**
 
-**`docker run -d -p 8080:8080 -p 8545:8545 -p 30310:30310 -p 30311:30311 graphlinqchain/docker-glq-nodemanager:v0.0.3`**
+**`docker run -d -p 8080:8080 -p 8545:8545 -p 30310:30310 -p 30311:30311 graphlinqchain/docker-glq-nodemanager:v0.0.9`**
 
 ### 1. Setup First Access Password&#x20;
 
