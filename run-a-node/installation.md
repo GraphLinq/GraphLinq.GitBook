@@ -15,9 +15,7 @@ docker pull graphlinqchain/docker-glq-nodemanager:v0.0.9
 ### 2.  Create And Run A New Container From An Image
 
 ```bash
-docker run -d --restart unless-stopped -p 8080:8080 -p 8545:8545 \
--p 8551:8551 -p 30310:30310 -p 30311:30311 \
-graphlinqchain/docker-glq-nodemanager:v0.0.9
+docker run -d --restart unless-stopped -p 8080:8080 -p 8545:8545 -p 8551:8551 -p 30310:30310 -p 30311:30311 graphlinqchain/docker-glq-nodemanager:v0.0.9
 ```
 
 {% hint style="info" %}
