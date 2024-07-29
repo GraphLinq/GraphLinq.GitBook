@@ -1,54 +1,127 @@
 # Installation
 
-**`docker pull graphlinqchain/docker-glq-nodemanager:v0.0.9`**
+### 1.  Pull The Docker Image
 
-**`docker run -d -p 8080:8080 -p 8545:8545 -p 30310:30310 -p 30311:30311 graphlinqchain/docker-glq-nodemanager:v0.0.9`**
+Download the image from the Docker Hub registry.
 
-### 1. Setup First Access Password&#x20;
+```bash
+docker pull graphlinqchain/docker-glq-nodemanager:v0.0.9
+```
 
-To begin setting up your Graphlinq node, navigate to http(s)://ip:8080/status. Here, you'll be prompted to set an access password to secure the node management. It's important to choose a strong password of at least 15 characters to ensure maximum security. Once you've entered your chosen password, you'll be taken to the setup page to continue the process.
+{% hint style="info" %}
+[Docker Pull Documentation](https://docs.docker.com/reference/cli/docker/image/pull/)
+{% endhint %}
+
+### 2.  Create And Run A New Container From An Image
+
+```bash
+docker run -d --restart unless-stopped -p 8080:8080 -p 8545:8545 \
+-p 8551:8551 -p 30310:30310 -p 30311:30311 \
+graphlinqchain/docker-glq-nodemanager:v0.0.9
+```
+
+{% hint style="info" %}
+You may want to use a different Restart Policy or only expose the ports that you need. [Docker Run Documentation](https://docs.docker.com/reference/cli/docker/container/run/)
+{% endhint %}
+
+{% hint style="info" %}
+If you are running a firewall or are behind a router that uses NAT, you will need to open the ports you want accessible.&#x20;
+{% endhint %}
+
+### 3.  Setup First Access Password&#x20;
+
+To begin setting up your GraphLinq node, navigate to http(s)://ip:8080/status. Here, you'll be prompted to set an access password to secure the node management. It's important to choose a strong password of at least 15 characters to ensure maximum security. Once you've entered your chosen password, you'll be taken to the setup page to continue the process.
 
 <figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-Please setup a big password \~15characters minimum.
+Example: http://localhost:8080/status?access-code=NodeManagerPasswordExample
 {% endhint %}
 
+{% hint style="info" %}
+Please use a secure password. We suggest 15 characters minimum. \[a-z]\[A-Z]\[0-9]
+{% endhint %}
 
+### 4.  Node Setup&#x20;
 
-### 2. Node Setup&#x20;
+In the Node Setup section, you will need to provide a KeyStore or the secret of a wallet, and define a strong password to create a KeyStore. This step is crucial to protect your node from any potential risks. You can refer to the image provided for guidance.
 
-In the Node Setup section, you will need to provide a keystore or the secret of a wallet, and define a strong password to create a keystore. This step is crucial to protect your node from any potential risks. You can refer to the image provided for guidance.
+<figure><img src="../.gitbook/assets/SetupNodes1.webp" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+{% hint style="info" %}
+We suggest using a different password than the access-code to the admin interface.
+{% endhint %}
 
-After providing the necessary information, simply click on the "Fire" button to launch your node.
+{% hint style="info" %}
+Please use a secure password. We suggest 15 characters minimum. \[a-z]\[A-Z]\[0-9]
+{% endhint %}
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+After providing the necessary information, simply click on the "Fire!" button to launch your node.
 
-### 3. Add Peers
+<figure><img src="../.gitbook/assets/SetupNodes.webp" alt=""><figcaption></figcaption></figure>
 
+1. The private key for the wallet you want to use.
+2. The password for unlocking the wallet.
+3. Click "Generate KeyStore".
+4. Click "Fire!" to complete the setup.
 
+### 5.  Node Management Page
 
-Add enode:// peers or domain names of other docker manager nodes.
+After pressing "Fire!" you will automatically be taken to the Node Management Page. To access this page in the future, you must include the "access-code" in your request that you chose in [Step 3](installation.md#id-3.-setup-first-access-password).
 
-examples of enode://:
+<figure><img src="../.gitbook/assets/StartNodes.webp" alt=""><figcaption><p>Numbers in the image correspond to the steps below.</p></figcaption></figure>
 
-> [http://103.125.216.32:8080/](http://103.125.216.32:8080/)\
-> enode://ebdfb40a6b7aa55a5907519630b736866ab0f8d87b3bb63b7ffa85b83448b05db2a5c3e6f7b3a88fb025712920f90b337d2c071d0135c699245aa6b8df25caeb@139.99.143.9:30310\
-> enode://0800b9f12b35973d219f51d072b2fff600f390e72af173730a0603f161200fcbcb8aa0d28a233d3ccdd52e2d32b00bd6a176c81cafa4adfe20be87c45e11748f@51.91.10.33:30310\
-> enode://a0d795683d38d03690f25f216e699c646410841dfcc6aa29a085affafab19eac1d26612499489c142ca667abcb3c6ad200b040bc75460d0442c4b257519fe043@34.122.85.128:30310\
-> enode://7bac6e22dd728711e793c9d0868a593d3aa503ea3fa0471cb612b8c3fb2d38fbd2a038317d6cf16ae96f2a3fe955f1ff8c7ef0aa1864d54b0630aa0f895bdbbd@103.125.216.32:30311\
-> [enode://6b61197a2c652ab024f4d19b18862e927e6cca223649aec7b4ce38e5755eebfe3ec18629c2f96723d6f329adf3c77a9fdb28638c778a0ea08e68bd878fd7e14c@103.125.216.32:30310](enode://6b61197a2c652ab024f4d19b18862e927e6cca223649aec7b4ce38e5755eebfe3ec18629c2f96723d6f329adf3c77a9fdb28638c778a0ea08e68bd878fd7e14c@103.125.216.32:30310)
+1. Enter your KeyStore password in the "Node Wallet Password" field. This is the password you chose in [Step 4](installation.md#id-4.-node-setup).&#x20;
+2. Press "START to begin synchronizing the Internal Node with the blockchain.
+3. If you want to expose the HTTP and RPC ports click on this "START" button once the previous step has finished synchronizing .
+4. To publish your Node to the [GraphLinq Chain Network Status](https://network.graphlinq.io/) page you will need to enter the "EthStats Server Url" and give your Node a "Node Name". Then click "START". This link is only provided to Validators.
+5. If you have been designated as a Validator, you can click on the "START MINER" button.
 
-### 4. Node Management Page
+That's it! Your node is now running.
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+{% hint style="info" %}
+It is best to allow the Internal Node to finish syncing before starting the External Node.&#x20;
+{% endhint %}
 
-1. Enter your keystore password in the "Node Wallet Password Field" and click on the "Start" button labeled as (1) to begin the node startup process.
-2. Once the node has completed its initial synchronization, you can start the exposed node by clicking on the "Start" button labeled as (2).
-3. If you are using an Internal Node Wallet that is designated as a validator, you can click on the "Start Miner" button.
+{% hint style="info" %}
+Before moving on to steps 4 and 5 it is best to have your Internal and External Node completely synced.
+{% endhint %}
 
-(Note that the main node is never accessible from the outside to increase security. You should only enter your password when launching the node. The second node should only be started if you want to expose an RPC. The exposed ports will be displayed in the red square, and the second node (external node) will be connected to the internal node.)
+{% hint style="info" %}
+See [Becoming A Validator](installation.md#becoming-a-validator) for more information.
+{% endhint %}
 
-Please note that the "Start Miner" button is only available for validators who have been accepted by Graphlinq. If you would like to request acceptance, please contact the Graphlinq team at [info@graphlinq.io](mailto:info@graphlinq.io).
+***
+
+### 6.  Add Peers (Optional)
+
+This step is not required however if you wish to add another Peer to your Node you can.
+
+Example enode://
+
+```
+enode://3414c01c19aa75a34f2dbd2f8d0898dc79d6b219ad77f8155abf1a287ce2ba60f14998a3a98c0cf14915eabfdacf914a92b27a01769de18fa2d049dbf4c17694@10.10.23.196:30301
+```
+
+In the IPC Console use this command to add the peer.
+
+```
+admin.addPeer("enode://3414c01c19aa75a34f2dbd2f8d0898dc79d6b219ad77f8155abf1a287ce2ba60f14998a3a98c0cf14915eabfdacf914a92b27a01769de18fa2d049dbf4c17694@10.10.23.196:30301");
+```
+
+{% hint style="info" %}
+The current list of nodes is automatically downloaded from http://103.125.216.32:8080/enodes by default.
+{% endhint %}
+
+***
+
+### Notes
+
+* The main node is never accessible from the outside to increase security.
+* You should only enter your password when launching the node
+* The second node should only be started if you want to expose an RPC.
+* The external node will be connected to the internal node.
+
+### Becoming A Validator
+
+The "START MINER" button is only available for validators who have been accepted by GraphLinq. If you are interested in becoming a validator, please contact the GraphLinq team at [info@graphlinq.io](mailto:info@graphlinq.io).
