@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Overview](README.md)
+  * [📄 Litepaper](overview/litepaper.md)
 
 ## GraphLinq Chain
 
