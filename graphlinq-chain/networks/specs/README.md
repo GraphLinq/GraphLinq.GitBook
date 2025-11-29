@@ -5,7 +5,7 @@
 <table><thead><tr><th width="190.5">Property</th><th>Details</th></tr></thead><tbody><tr><td>Block Time</td><td>15 seconds</td></tr><tr><td>Consensus</td><td>PoA (clique)</td></tr><tr><td>Block Rewards</td><td>5 GLQ per Block</td></tr><tr><td>Consensus Coin</td><td>GLQ</td></tr><tr><td>Chain ID (Mainnet)</td><td>614 </td></tr></tbody></table>
 
 {% hint style="info" %}
-Track GraphLinq Chain status in real time at: [https://status.graphlinq.io/](https://status.graphlinq.io/)
+Track GraphLinq Chain status in real time at:[ https://network.graphlinq.io/](https://network.graphlinq.io/)
 {% endhint %}
 
 
