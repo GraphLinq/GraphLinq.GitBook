@@ -3,7 +3,7 @@
 **Steps**:
 
 1. Connect to GraphLinq App on Ethereum Mainnet Or GraphLinq Mainnet depending on  you want to bridge in our bridge out.
-2. Make sure you are on the [Bridge](https://app.graphlinq.io/app/bridge) page
+2. Make sure you are on the [Bridge](https://hub.graphlinq.io/bridge) page
 3. Click on "Bridge in my GLQ" or "Bridge out my GLQ"
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-02-17 at 2.38.01 PM.png" alt=""><figcaption></figcaption></figure>
